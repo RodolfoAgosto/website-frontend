@@ -14,6 +14,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import YouTube from "@mui/icons-material/YouTube";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import BuildIcon from "@mui/icons-material/Build";
@@ -28,8 +29,8 @@ import { useTheme } from '@mui/material';
 const menuItems = [
   { text: "Home", id: "home", icon: <HomeIcon /> },
   { text: "Sobre mí", id: "sobre-mi", icon: <PersonIcon /> },
-  { text: "Habilidades técnicas", id: "habilidades", icon: <BuildIcon /> },
-  { text: "Educación/Certificaciones", id: "educacion", icon: <SchoolIcon /> },
+  { text: "Competencias", id: "competencias", icon: <BuildIcon /> },
+  { text: "Educación y Certificaciones", id: "educacion", icon: <SchoolIcon /> },
   { text: "Proyectos", id: "proyectos", icon: <FolderIcon /> },
   { text: "Tutoriales", id: "tutoriales", icon: <MenuBookIcon /> },
   { text: "Blog", id: "blog", icon: <ArticleIcon /> },
@@ -71,7 +72,7 @@ export default function Sidebar({ setOpen}) {
       },
       {
         // Marca como activa cuando ~50–60% de la sección es visible
-        threshold: 0.6,
+        threshold: 0.2,
       }
     );
 
@@ -111,6 +112,15 @@ export default function Sidebar({ setOpen}) {
             sx={{ color: theme.palette.sidebar.inactive, "&:hover": { color: theme.palette.sidebar.active } }}
           >
             <GitHubIcon />
+          </IconButton>
+          <IconButton 
+            component="a"
+            href="https://www.youtube.com/@tuusuario"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: theme.palette.sidebar.inactive, "&:hover": { color: theme.palette.sidebar.active } }}
+          >
+            <YouTube />
           </IconButton>
         </Stack>
       </Stack>
