@@ -3,10 +3,13 @@ import SidebarLayout from './layouts/SidebarLayout';
 import Home from './pages/Home';
 import AuzoniaProject from './pages/AuzoniaProject';
 import ScrollToTop from './components/ScrollToTop';
+import { NavProvider } from "./context/NavContext";
+
 function App() {
   return (
     <>
       <Router>
+         <NavProvider>
         <ScrollToTop />       
         <SidebarLayout>
           <Routes>
@@ -14,6 +17,7 @@ function App() {
             <Route path="/pages/auzonia_project" element={<AuzoniaProject />} />
           </Routes>
         </SidebarLayout>
+        </NavProvider>
       </Router>
     </>
   );

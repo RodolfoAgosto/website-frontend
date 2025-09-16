@@ -12,7 +12,7 @@ const educationData = [
     hceresLogo: <Hceres style={{ width: 50, height: 50, background: 'transparent'  }} />,
     hceresDescription: (
       <>
-        Primera universidad en Sudamérica acreditada por <strong>Hcéres</strong>, que certifica que la UAI cumple con los <strong>estándares de calidad educativa de la Unión Europea.</strong>
+        Primera universidad en Sudamérica acreditada por <strong>Hcéres </strong> (organismo oficial francés de acreditación universitaria e investigación), que certifica que la UAI cumple con los <strong>estándares de calidad educativa de la Unión Europea.</strong>
       </>
     ),
   },

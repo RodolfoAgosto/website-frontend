@@ -7,7 +7,6 @@ export default function TutorialCard({ title, description, videoUrl, logoSrc }) 
 {
 
     const [open, setOpen] = useState(false);
-
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
