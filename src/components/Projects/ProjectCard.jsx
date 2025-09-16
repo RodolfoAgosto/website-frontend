@@ -63,7 +63,7 @@ export default function ProjectCard({
               component={Link} 
               to={path} 
             >
-              Ver detalle
+              Explorar proyecto
             </Button>
           </Box>
         </Grid>
