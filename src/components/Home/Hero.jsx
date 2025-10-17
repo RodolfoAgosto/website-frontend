@@ -30,7 +30,7 @@ export default function Hero({ id }) {
         timeout = setTimeout(() => {
           deleting = true;
           type();
-        }, 4000);
+        }, 3200);
       } else if (deleting && charIndex > 0) {
         // Borrando
         setDisplayedText(currentPhrase.slice(0, charIndex - 1));
