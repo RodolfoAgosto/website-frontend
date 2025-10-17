@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Box, Typography, Button, Card, Grid, IconButton } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import CoverVideo from "../CoverVideo"; 
 import { Link } from 'react-router-dom';
 
 export default function ProjectCard({ 
@@ -11,8 +10,6 @@ export default function ProjectCard({
   logoSrc,
   logoAlt = "Logo",
   path,
-  coverTitle,
-  coverSubtitle, 
 }) {
   const [playing, setPlaying] = useState(false);
 
@@ -49,10 +46,11 @@ export default function ProjectCard({
             </Typography>
           </div>
           <Box sx={{ mt: 2, display: "flex",
-    justifyContent: {
-      xs: "flex-end",  // en pantallas chicas y medianas → derecha
-      md: "flex-start" // en pantallas grandes → izquierda
-    }, }}>
+            justifyContent: {
+              xs: "flex-end",
+              md: "flex-start"
+            }
+          }}>
             <Button
               variant="contained"
               sx={{
@@ -68,16 +66,16 @@ export default function ProjectCard({
           </Box>
         </Grid>
 
-        {/* Video a la derecha */}
-        <Grid size={{ xs: 12, md: 6 }} >
+        {/* Video / Imagen a la derecha */}
+        <Grid size={{ xs: 12, md: 6 }}>
           <Box
             sx={{
               position: "relative",
-              paddingTop: "56.25%" /* 16:9 */,
+              paddingTop: "56.25%", // mantiene 16:9
               borderRadius: 1,
               overflow: "hidden",
               bgcolor: "background.default",
-              border: "1px solid #4F2928",        
+              border: "1px solid #4F2928",
             }}
           >
             {/* Iframe solo si se está reproduciendo */}
@@ -91,7 +89,7 @@ export default function ProjectCard({
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  borderRadius: "8px",
+                  borderRadius: "1px",
                 }}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -99,33 +97,35 @@ export default function ProjectCard({
               />
             )}
 
-            {/* Overlay CoverVideo + botón play */}
+            {/* Overlay solo con imagen y botón play */}
             {!playing && (
               <Box
                 onClick={handlePlay}
                 sx={{
-                  cursor: "pointer",
                   position: "absolute",
                   top: 0,
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  bgcolor: "rgba(0,0,0,0.2)",
-                  textAlign: "center",
-                  p: 2,
+                  cursor: "pointer",
+                  overflow: "hidden",
                 }}
               >
-                <CoverVideo
-                  logoSrc={logoSrc}
-                  logoAlt={logoAlt}
-                  title={coverTitle}
-                  subtitle={coverSubtitle}
+                {/* Imagen ocupa todo el contenedor */}
+                <img
+                  src={logoSrc}
+                  alt={logoAlt}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover", // llena todo el cuadro
+                  }}
                 />
 
+                {/* Botón play centrado */}
                 <IconButton
                   sx={{
                     position: "absolute",

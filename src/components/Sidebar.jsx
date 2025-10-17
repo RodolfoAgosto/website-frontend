@@ -167,7 +167,7 @@ export default function Sidebar({ setOpen }) {
         paper: {
           sx: {
             backgroundColor: theme.palette.sidebar.background,
-            width: 310,
+            width: { xs: 250, md: 327, lg: 296 },
           },
         },
       }}

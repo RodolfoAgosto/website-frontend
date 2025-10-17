@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SidebarLayout from './layouts/SidebarLayout';
 import Home from './pages/Home';
+import AnaviProject from './pages/AnaviProject';
 import AuzoniaProject from './pages/AuzoniaProject';
 import ScrollToTop from './components/ScrollToTop';
 import { NavProvider } from "./context/NavContext";
@@ -14,7 +15,8 @@ function App() {
         <SidebarLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/pages/auzonia_project" element={<AuzoniaProject />} />
+            <Route path="/pages/anavi_project" element={<AnaviProject />} />
+            <Route path="/pages/auzonia_project" element={<AuzoniaProject />} />    
           </Routes>
         </SidebarLayout>
         </NavProvider>

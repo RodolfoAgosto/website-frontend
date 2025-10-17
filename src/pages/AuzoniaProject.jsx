@@ -6,6 +6,9 @@ import BuildIcon from "@mui/icons-material/Build";
 import EAButtonIcon from '../components/EAButtonIcon';
 import ArquitecturaAuzonia from "../components/Auzonia/ArquitecturaAuzonia";
 import CarouselInterfaces from "../components/Auzonia/CarouselInterfaces";
+import { ReactComponent as VBNetIcon } from '../assets/icons/visualbasic.svg';
+import { ReactComponent as DotNetIcon } from '../assets/icons/donet.svg';
+import { ReactComponent as SQLServerIcon } from '../assets/icons/microsoftsqlserver.svg';
 
 const auzoniaSections = [
   { id: "arquitectura", title: "Arquitectura" },
@@ -268,7 +271,7 @@ const AuzoniaProject = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/p9ws39aj0ZM"
+                    src="https://www.youtube.com/embed/ssGL0uKugoQ"
                     title="Video de demostración - Gestión de Compras"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -346,8 +349,8 @@ const AuzoniaProject = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/p9ws39aj0ZM"
-                    title="Video de demostración - Gestión de Compras"
+                    src="https://www.youtube.com/embed/OQP8eX4zHcA"
+                    title="Video de demostración - Gestión de Entregas"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -407,8 +410,8 @@ const AuzoniaProject = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/p9ws39aj0ZM"
-                    title="Video de demostración - Gestión de Compras"
+                    src="https://www.youtube.com/embed/Ox8pG_Y2T2U"
+                    title="Video de demostración - Valuación de Inventarios"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -557,8 +560,8 @@ const AuzoniaProject = () => {
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.youtube.com/embed/p9ws39aj0ZM"
-                      title="Video de demostración - Gestión de Compras"
+                      src="https://www.youtube.com/embed/hZbOHes4YaQ"
+                      title="Video de demostración - Multidioma + Observer"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
@@ -915,6 +918,118 @@ const AuzoniaProject = () => {
             </Box>
           </Box>            
         </Box>
+        {/* Base de datos */}
+        <Box key={auzoniaSections[7].id} id={auzoniaSections[7].id} sx={{ mt: 0 }}>
+          <Typography variant="h4" gutterBottom>{auzoniaSections[7].title}</Typography>
+          <Box sx={{ maxWidth: "1000px", margin: "0 auto", py: 1, px: { xs: 2, sm: 6 } }}>        
+            <Typography variant="body1" paragraph  sx={{ textAlign: "justify" }}> 
+              Ela sistema de base de datos garantiza la seguridad y continuidad de la información a través de dos pilares fundamentales: un gestor de integridad, 
+              que valida de forma automática y proactiva la consistencia de los datos críticos, y un módulo de Backup/Restore, que asegura la recuperación ante 
+              incidentes mediante respaldos trazables y gestionados según permisos. En conjunto, ambas funciones fortalecen la confiabilidad y resiliencia del 
+              sistema.
+            </Typography>
+          </Box>
+          {/* Gestión de Integridad */}
+          <Box key={auzoniaSections[7].subSections[0].id} 
+               id={auzoniaSections[7].subSections[0].id} 
+               sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
+          >
+            <Typography variant="h5" gutterBottom>
+              {auzoniaSections[7].subSections[0].title}
+            </Typography>
+            <Typography variant="body2" paragraph sx={{ textAlign: "justify" }}>
+              El sistema incorpora un mecanismo robusto de control de integridad basado
+              en las tablas <em>Usuario</em> —por su criticidad— y{" "}
+              <em>Dígito_Verificador_Vertical</em>. Desde el módulo <em>Sistema</em> es
+              posible ejecutar la función <em>Verificar Integridad</em>, que permite
+              auditar el estado de la base sin necesidad de modificar, agregar ni
+              eliminar registros.
+            </Typography>
+            <Box component="ul" sx={{ pl: 3 }}>
+              <Typography component="li" variant="body2" paragraph>
+                Esta verificación se dispara automáticamente en dos escenarios:
+              <Box component="ul" sx={{ pl: 3, mt: 3 }}>
+                <Typography component="li" variant="body2" paragraph>
+                  Al momento del logIn.
+                </Typography>
+                <Typography component="li" variant="body2" paragraph>
+                  Ante cambios en tablas críticas.
+                </Typography>
+              </Box>
+            </Typography>
+            <Typography component="li" variant="body2" paragraph>
+              Si se detecta un problema de integridad, la reacción del sistema se ajusta al tipo de usuario:
+              <Box component="ul" sx={{ pl: 3, mt: 3 }}>
+                <Typography component="li" variant="body2" paragraph>
+                  Usuarios con permisos de restauración reciben mensajes habilitantes para ejecutar la recuperación.
+                </Typography>
+                <Typography component="li" variant="body2" paragraph>
+                  Usuarios sin permisos son notificados y el sistema se cierra automáticamente para garantizar la seguridad de la información.
+                </Typography>
+              </Box>
+            </Typography>
+            <Typography component="li" variant="body2" paragraph>
+              En caso de error, solo un usuario con permisos de restauración podrá acceder y actuar sobre la base.
+            </Typography>
+          </Box>
+          {/* Imagen Arbol de Permisos */}
+          <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+            <img 
+              src="/assets/Auzonia/Arbol_Permisos.png" 
+              alt="Arbol Permisos" 
+              style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+            />
+          </Box>
+        </Box>
+      </Box>    
+      {/* Backup / Restore */}
+      <Box key={auzoniaSections[7].subSections[1].id} 
+        id={auzoniaSections[7].subSections[1].id} 
+          sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
+      >
+        <Typography variant="body2" paragraph sx={{ textAlign: "justify" }}>
+          El sistema gestiona la continuidad de datos mediante un módulo de
+          Backup/Restore que facilita la administración y recuperación de
+          información:
+        </Typography>
+        <Box component="ul" sx={{ pl: 3 }}>
+          <Typography component="li" variant="body2" paragraph>
+            Se presenta un listado con el historial completo de respaldos, mostrando
+            directorio de destino y fecha de ejecución, permitiendo restaurar la
+            base directamente desde uno de esos registros.
+          </Typography>
+          <Typography component="li" variant="body2" paragraph>
+            Alternativamente, el usuario puede seleccionar manualmente un archivo
+            de backup desde cualquier ubicación específica.
+          </Typography>
+          <Typography component="li" variant="body2" paragraph>
+            La gestión de respaldos respeta un esquema de permisos granulares:
+              <Box component="ul" sx={{ pl: 3, mt: 3 }}>
+                <Typography component="li" variant="body2" paragraph>
+                  Permiso de módulo.
+                </Typography>
+                <Typography component="li" variant="body2" paragraph>
+                  Permiso para realizar backups.
+                </Typography>
+                <Typography component="li" variant="body2" paragraph>
+                  Permiso para restaurar la base.
+                </Typography>
+              </Box>
+            </Typography>
+            <Typography component="li" variant="body2" paragraph>
+              El sistema contempla y gestiona errores derivados de permisos del sistema operativo en la carpeta destino del backup, garantizando la
+              trazabilidad del proceso.
+            </Typography>
+          </Box>
+          {/* Imagen Arbol de Permisos */}
+          <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+            <img 
+              src="/assets/Auzonia/Arbol_Permisos.png" 
+              alt="Arbol Permisos" 
+              style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+            />
+          </Box>
+        </Box>
         {/* Interfaz de usuario */}
         <Box key={auzoniaSections[8].id} id={auzoniaSections[8].id} sx={{ mt: 0 }}>
           <Typography variant="h4" gutterBottom>{auzoniaSections[8].title}</Typography>
@@ -979,6 +1094,50 @@ const AuzoniaProject = () => {
             <Typography variant="body1" paragraph  sx={{ textAlign: "justify" }}> 
               Haber tenido práctica y experiencia con varios lenguajes de programación me brindó una visión más amplia para abordar problemas desde distintos paradigmas y estilos, además de fortalecer mi capacidad de adaptación frente a nuevas tecnologías. La industria del software evoluciona constantemente, y esa versatilidad me permite asimilar cambios con rapidez y aplicar las mejores prácticas sin importar la herramienta. No obstante, mi foco principal está en Java, donde profundizo mis conocimientos y busco especializarme como backend developer, potenciando lo aprendido en otros lenguajes para enriquecer mi forma de programar en el ecosistema Java.
             </Typography>
+            {/* Stack tecnológico con iconos */}
+<Box sx={{ display: "flex", gap: 3, flexWrap: "wrap", mt: 3 }}>
+  {/* VB.NET */}
+  <Box sx={{ textAlign: "center" }}>
+    <VBNetIcon
+      style={{
+        fontSize: 25,
+        color: "#8A2BE2",
+        marginTop: "3px",
+      }}
+    />
+    <Typography variant="subtitle1" sx={{ mt: 1.2, fontSize: 14 }}>
+      VB.NET
+    </Typography>
+  </Box>
+
+  {/* .NET Framework */}
+  <Box sx={{ textAlign: "center" }}>
+    <DotNetIcon
+      style={{
+        fontSize: 30,
+        color: "#512BD4",
+      }}
+    />
+    <Typography variant="subtitle1" sx={{ mt: 0, fontSize: 14 }}>
+      .NET Framework
+    </Typography>
+  </Box>
+
+  {/* SQL Server */}
+  <Box sx={{ textAlign: "center" }}>
+    <SQLServerIcon
+      style={{
+        fontSize: 38,
+        color: "#CC2927",
+        marginTop: "5px",
+      }}
+    />
+    <Typography variant="subtitle1" sx={{ mt: 1.1, fontSize: 14 }}>
+      SQL Server
+    </Typography>
+  </Box>
+</Box>
+
           </Box>
          </Box>
       </Box>

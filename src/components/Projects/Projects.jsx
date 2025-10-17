@@ -23,7 +23,7 @@ const projects = [
     • **Flujo de Trabajo Integral**: Abarca todo el proceso de negocio: compras, depósitos y entregas de mercadería.
     • **Arquitectura Robusta**: Incluye control de perfiles de usuario, trazabilidad de operaciones, bitácora de auditoría y funcionalidades de seguridad y cifrado de datos.
     • **Listo para Producción**: Respaldado por documentación técnica detallada, diagramas UML y manuales para su despliegue empresarial.`,
-    videoUrl: "https://www.youtube.com/embed/13EifDb4GYs",
+    videoUrl: "https://www.youtube.com/embed/VhusjG-6ek4",
     path: "/pages/auzonia_project",
     github: "https://github.com/usuario/proyecto2",
     logoSrc: "/assets/auzonia_portada.png",
