@@ -5,10 +5,12 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import BuildIcon from "@mui/icons-material/Build";
 import EAButtonIcon from '../components/EAButtonIcon';
 import ArquitecturaAuzonia from "../components/Auzonia/ArquitecturaAuzonia";
-import CarouselInterfaces from "../components/Auzonia/CarouselInterfaces";
+import InterfacesImageList from "../components/Auzonia/InterfacesImageList";
 import { ReactComponent as VBNetIcon } from '../assets/icons/visualbasic.svg';
 import { ReactComponent as DotNetIcon } from '../assets/icons/donet.svg';
 import { ReactComponent as SQLServerIcon } from '../assets/icons/microsoftsqlserver.svg';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 
 const auzoniaSections = [
   { id: "arquitectura", title: "Arquitectura" },
@@ -26,26 +28,26 @@ const auzoniaSections = [
     title: "Seguridad",
     subSections: [
       { id: "login", title: "Login/Logout" },
-      { id: "permisos", title: "Permisos y perfiles + Patron Composite" },
+      { id: "permisos", title: "Permisos y Perfiles + Patrón Composite" },
       { id: "bitacora", title: "Bitácora de Auditoria" },
       { id: "encriptado", title: "Encriptado" },
     ],
   },
-  { id: "multidioma", title: "Multidioma + Patron Observer" },
-  { id: "casos-prueba", title: "Casos de prueba" },
+  { id: "multidioma", title: "Multidioma + Patrón Observer" },
+  { id: "casos-prueba", title: "Casos de Prueba" },
   {
     id: "despliegue",
     title: "Despliegue y Soporte",
     subSections: [
       { id: "instalador", title: "Instalador" },
-      { id: "ayuda", title: "Ayuda en línea" },
+      { id: "ayuda", title: "Ayuda en Línea" },
     ],
   },
   {
     id: "reportes",
     title: "Reportes",
     subSections: [
-      { id: "informes", title: "Informes y exportación PDF" },
+      { id: "informes", title: "Informes y Exportación PDF" },
       { id: "serializacion", title: "Serialización JSON/XML" },
     ],
   },
@@ -450,20 +452,24 @@ const AuzoniaProject = () => {
                 <strong>Diferenciación de accesos:</strong> El sistema distingue entre usuario inexistente o contraseña incorrecta y responde según corresponda.
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap", mt: 4, mb: 4 }}>
-                <Box sx={{ flex: 1, maxWidth: 180 }}>
-                  <img
-                    src="/assets/Auzonia/Usuario_no_registrado.png" 
-                    alt="Usuario no registrado.png"                 
-                    style={{ width: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
+                <Box sx={{ flex: 1, maxWidth: 500 }}>
+                  <Card sx={{ maxWidth: 500, boxShadow: 3, borderRadius: 1 }}>
+                    <CardMedia
+                      component="img"
+                      image="/assets/Auzonia/Usuario_no_registrado.png"
+                      alt="Usuario no registrado"
+                    />
+                  </Card>
                 </Box>
-                <Box sx={{ flex: 1, maxWidth: 180 }}>
-                  <img
-                    src="/assets/Auzonia/Contrasena_incorrecta.png" 
-                    alt="Contrasena incorrecta" 
-                    style={{ width: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
-                </Box>
+                <Box sx={{ flex: 1, maxWidth: 400 }}>
+                  <Card sx={{ maxWidth: 400, boxShadow: 3, borderRadius: 1 }}>
+                    <CardMedia
+                      component="img"
+                      image="/assets/Auzonia/Contrasena_incorrecta.png"
+                      alt="Contrasena incorrecta" 
+                    />
+                  </Card>
+                 </Box>
               </Box>
               <Typography component="li" variant="body2" paragraph>
                <strong>Bloqueo de usuario:</strong> El usuario es bloqueado tras el tercer intento con contraseña incorrecta.
@@ -484,12 +490,14 @@ const AuzoniaProject = () => {
                 <strong>Actualización del layout:</strong> Se refleja la sesión iniciada, por ejemplo, mostrando el nombre del usuario en el StatusStrip.
               </Typography>
               {/* Imagen usuario logueado */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-              <img 
-                src="/assets/Auzonia/Ingreso_valido.png" 
-                alt="Arquitectura Auzonia" 
-                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
+              <Box sx={{ flex: 1, maxWidth: 500, mb: 4 }}>
+                <Card sx={{ maxWidth: 500, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Ingreso_valido.png"
+                    alt="Arquitectura Auzonia"
+                  />
+                </Card>
               </Box>
               <Typography component="li" variant="body2" paragraph>
                 <strong>Estados de acceso:</strong> Se utiliza un Enum con las opciones: AccesoValido, Reintentar, UsuarioBloqueado y UsuarioInexistente.
@@ -516,24 +524,30 @@ const AuzoniaProject = () => {
                 <strong>Visualización del árbol de permisos:</strong> Desde el módulo Sistema se puede observar el árbol completo de permisos, incluyendo todas las familias y patentes del sistema, con sus jerarquías detalladas en cada nodo.
               </Typography>
               {/* Imagen Arbol de Permisos */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Arbol_Permisos.png" 
-                  alt="Arbol Permisos" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
+              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt: 0 , mb:0 }} >
+                <Card sx={{ maxWidth: 500, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Arbol_Permisos.png"
+                    alt="Arbol Permisos"
+                    sx={{ width: "100%", height: "auto" }}
+                  />
+                </Card>
               </Box>
               <Typography component="li" variant="body2" paragraph>
                 <strong>Control de recursividad:</strong> El sistema impide asignar una familia padre que sea hija de la familia a asignar, evitando bucles infinitos en la estructura.
               </Typography>
-              {/* Imagen Recursividad */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Recursividad.png" 
-                  alt="Recursividad" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
+              {/* Imagen Recursividad */}  
+              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:0 }} >
+                <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Recursividad.png" 
+                    alt="Recursividad" 
+                    sx={{ width: "100%", height: "auto" }}
+                  />
+                </Card>
+              </Box> 
               <Typography component="li" variant="body2" paragraph>
                 <strong>Uso del patrón Composite:</strong> Se implementa el patrón Composite para permitir construir perfiles complejos a partir de permisos simples, facilitando la herencia y composición de permisos.
               </Typography>
@@ -541,13 +555,16 @@ const AuzoniaProject = () => {
                 <strong>Asignación múltiple de permisos:</strong> Cada usuario puede recibir más de un permiso o familia, lo que permite definir accesos flexibles y personalizados.
               </Typography>
               {/* Administracion Perfiles */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Administracion_Perfiles.png" 
-                  alt="Administracion Perfiles" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
+              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:0 }} >
+                <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Administracion_Perfiles.png" 
+                    alt="Administracion Perfiles" 
+                    sx={{ width: "100%", height: "auto" }}
+                  />
+                </Card>
+              </Box> 
               <Typography component="li" variant="body2" paragraph>
                 <strong>Niveles de acceso:</strong> El sistema contempla distintos niveles de autorización, ya sea por módulo completo o por funcionalidades específicas dentro de cada módulo.
               </Typography>
@@ -646,6 +663,17 @@ const AuzoniaProject = () => {
                   <strong>Identificador:</strong> Componente del software que generó el registro 
                   (ej.: <code>BackUp_DAL</code> o <code>FormBackUp</code>).
                 </Typography>
+                {/* Bitácora de Auditoria */}
+                <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:0 }} >
+                  <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                    <CardMedia
+                      component="img"
+                      image="/assets/Auzonia/Bitacora_Auditoria.png" 
+                      alt="Bitacora de Auditoria" 
+                      sx={{ width: "100%", height: "auto" }}
+                    />
+                  </Card>
+                </Box> 
               </Box>
             </Box> 
           </Box>
@@ -724,14 +752,17 @@ const AuzoniaProject = () => {
                 Al seleccionar un nuevo idioma, el método <code>ActualizarIdioma(idioma)</code> notifica a todos los observadores para actualizar la interfaz.
               </Typography>
             </Box>
-            {/* Imagen Arbol de Permisos */}
-            <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-              <img 
-                src="/assets/Auzonia/Arbol_Permisos.png" 
-                alt="Arbol Permisos" 
-                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-              />
-            </Box>
+            {/* Multiidioma */}
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:0 }} >
+              <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                <CardMedia
+                  component="img"
+                  image="/assets/Auzonia/Multidioma.png" 
+                  alt="Multidioma" 
+                  sx={{ width: "100%", height: "auto" }}
+                />
+              </Card>
+            </Box> 
           </Box>
         </Box>
         {/* Casos de prueba */}
@@ -744,14 +775,17 @@ const AuzoniaProject = () => {
             <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
               Ejemplo de <strong>test unitario</strong> para validar el procedimiento de encriptación:
             </Typography>
-            {/* Imagen Arbol de Permisos */}
-            <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-              <img 
-                src="/assets/Auzonia/Arbol_Permisos.png" 
-                alt="Arbol Permisos" 
-                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-              />
-            </Box>
+            {/* Test */}
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:0 }} >
+              <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                <CardMedia
+                  component="img"
+                  image="/assets/Auzonia/Test.png" 
+                  alt="Multidioma" 
+                  sx={{ width: "100%", height: "auto" }}
+                />
+              </Card>
+            </Box> 
           </Box>
         </Box>
         {/* Despliegue y Soporte */}
@@ -780,33 +814,30 @@ const AuzoniaProject = () => {
                 <strong>Prerequisitos del Entorno: </strong>
                 El sistema valida que se cumplan los prerequisitos necesarios antes de iniciar el proceso. De ser requerido, instala automáticamente el software adicional y dependencias, asegurando que el entorno quede correctamente configurado y listo para su uso.
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap", mt: 4, mb: 4 }}>
-                <Box sx={{ flex: 1, maxWidth: 180 }}>
-                  <img
-                    src="/assets/Auzonia/Usuario_no_registrado.png" 
-                    alt="Usuario no registrado.png"                 
-                    style={{ width: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
-                </Box>
-                <Box sx={{ flex: 1, maxWidth: 180 }}>
-                  <img
-                    src="/assets/Auzonia/Contrasena_incorrecta.png" 
-                    alt="Contrasena incorrecta" 
-                    style={{ width: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
-                </Box>
-              </Box>
               <Typography component="li" variant="body2" paragraph>
                <strong>Instalación:</strong> El sistema guía al usuario durante todo el proceso, ejecutando la instalación del script de base de datos, la carga de datos iniciales y el despliegue del software de la aplicación ya compilado, dejando el entorno listo para su funcionamiento.
               </Typography>
-              {/* Imagen usuario logueado */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-              <img 
-                src="/assets/Auzonia/Ingreso_valido.png" 
-                alt="Arquitectura Auzonia" 
-                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
+              {/* Intalador */}
+              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:4 }} >
+                <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Instalador1.png" 
+                    alt="Instalador2" 
+                    sx={{ width: "100%", height: "auto" }}
+                  />
+                </Card>
+              </Box> 
+              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:4 }} >
+                <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Instalador2.png" 
+                    alt="Instalador2" 
+                    sx={{ width: "100%", height: "auto" }}
+                  />
+                </Card>
+              </Box> 
             </Box> 
           </Box>  
           {/* Ayuda en línea */}
@@ -836,14 +867,17 @@ const AuzoniaProject = () => {
               <Typography component="li" variant="body2" paragraph>
                 Además, el sistema incluye una ayuda en línea organizada mediante un árbol de navegación, lo que permite acceder rápidamente a cualquier sección del documento.
               </Typography>
-              {/* Imagen Arbol de Permisos */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Arbol_Permisos.png" 
-                  alt="Arbol Permisos" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
+              {/* Ayuda */}
+              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:4 }} >
+                <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Ayuda.png" 
+                    alt="Ayuda" 
+                    sx={{ width: "100%", height: "auto" }}
+                  />
+                </Card>
+              </Box> 
             </Box>
           </Box>        
         </Box>                
@@ -876,14 +910,17 @@ const AuzoniaProject = () => {
               <Typography component="li" variant="body2" paragraph>
                 Los informes presentan un diseño cuidado, con márgenes, centrado, encabezados, logos y cuadrillas, garantizando una visualización profesional.
               </Typography>
-              {/* Imagen Arbol de Permisos */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Arbol_Permisos.png" 
-                  alt="Arbol Permisos" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
+              {/* Reportes */}
+              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh", mt:0, mb:4 }} >
+                <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
+                  <CardMedia
+                    component="img"
+                    image="/assets/Auzonia/Reportes.png" 
+                    alt="Reportes" 
+                    sx={{ width: "100%", height: "auto" }}
+                  />
+                </Card>
+              </Box> 
             </Box>
           </Box>    
           {/* Serialización JSON/XML */}
@@ -907,14 +944,6 @@ const AuzoniaProject = () => {
               <Typography component="li" variant="body2" paragraph>
                 Se contemplan ambos formatos: JSON y XML, garantizando compatibilidad con distintos sistemas de proveedores.
               </Typography>
-              {/* Imagen Arbol de Permisos */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Arbol_Permisos.png" 
-                  alt="Arbol Permisos" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
             </Box>
           </Box>            
         </Box>
@@ -972,14 +1001,6 @@ const AuzoniaProject = () => {
               En caso de error, solo un usuario con permisos de restauración podrá acceder y actuar sobre la base.
             </Typography>
           </Box>
-          {/* Imagen Arbol de Permisos */}
-          <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-            <img 
-              src="/assets/Auzonia/Arbol_Permisos.png" 
-              alt="Arbol Permisos" 
-              style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-            />
-          </Box>
         </Box>
       </Box>    
       {/* Backup / Restore */}
@@ -987,6 +1008,9 @@ const AuzoniaProject = () => {
         id={auzoniaSections[7].subSections[1].id} 
           sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
       >
+        <Typography variant="h5" gutterBottom>
+          {auzoniaSections[7].subSections[1].title}
+        </Typography>
         <Typography variant="body2" paragraph sx={{ textAlign: "justify" }}>
           El sistema gestiona la continuidad de datos mediante un módulo de
           Backup/Restore que facilita la administración y recuperación de
@@ -1021,11 +1045,11 @@ const AuzoniaProject = () => {
               trazabilidad del proceso.
             </Typography>
           </Box>
-          {/* Imagen Arbol de Permisos */}
+          {/* Imagen Backup Restore */}
           <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
             <img 
-              src="/assets/Auzonia/Arbol_Permisos.png" 
-              alt="Arbol Permisos" 
+              src="/assets/Auzonia/Backup_Restore.png" 
+              alt="Backup Restore" 
               style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
             />
           </Box>
@@ -1070,10 +1094,10 @@ const AuzoniaProject = () => {
               <Typography variant="h5" gutterBottom>
                 Mapa de navegación
               </Typography>
-              {/* Imagen Arbol de Permisos */}
+              {/* Mapa de Navegacion */}
               <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
                 <img 
-                  src="/assets/Auzonia/Arbol_Permisos.png" 
+                  src="/assets/Auzonia/Mapa_Navegacion.png" 
                   alt="Arbol Permisos" 
                   style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                 />
@@ -1082,7 +1106,7 @@ const AuzoniaProject = () => {
                 Interfaces del sistema
                 </Typography>
               <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <CarouselInterfaces/>
+                <InterfacesImageList/>
               </Box>
             </Box>
           </Box>
