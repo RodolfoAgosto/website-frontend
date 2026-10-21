@@ -14,6 +14,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import YouTube from "@mui/icons-material/YouTube";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import BuildIcon from "@mui/icons-material/Build";
@@ -23,13 +24,13 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ArticleIcon from "@mui/icons-material/Article";
 import DescriptionIcon from "@mui/icons-material/Description";
 import MailIcon from "@mui/icons-material/Mail";
-import { useTheme } from '@mui/material';
+import { useTheme } from "@mui/material";
 
 const menuItems = [
   { text: "Home", id: "home", icon: <HomeIcon /> },
   { text: "Sobre mí", id: "sobre-mi", icon: <PersonIcon /> },
-  { text: "Habilidades técnicas", id: "habilidades", icon: <BuildIcon /> },
-  { text: "Educación/Certificaciones", id: "educacion", icon: <SchoolIcon /> },
+  { text: "Competencias", id: "competencias", icon: <BuildIcon /> },
+  { text: "Educación y Certificaciones", id: "educacion", icon: <SchoolIcon /> },
   { text: "Proyectos", id: "proyectos", icon: <FolderIcon /> },
   { text: "Tutoriales", id: "tutoriales", icon: <MenuBookIcon /> },
   { text: "Blog", id: "blog", icon: <ArticleIcon /> },
@@ -37,13 +38,13 @@ const menuItems = [
   { text: "Contacto", id: "contacto", icon: <MailIcon /> },
 ];
 
-export default function Sidebar({ setOpen}) {
+export default function Sidebar({ setOpen }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeId, setActiveId] = useState(menuItems[0]?.id || "");
   const theme = useTheme();
 
-  // Función para hacer scroll suave
+  // Scroll suave al hacer click
   const scrollToSection = (id) => {
     setOpen(false);
     if (location.pathname !== "/") {
@@ -63,21 +64,20 @@ export default function Sidebar({ setOpen}) {
       .map((m) => document.getElementById(m.id))
       .filter(Boolean);
 
+    if (sections.length === 0) return; // nada que observar en otras rutas
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) setActiveId(e.target.id);
         });
       },
-      {
-        // Marca como activa cuando ~50–60% de la sección es visible
-        threshold: 0.6,
-      }
+      { threshold: 0.2 }
     );
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]); // 👈 dependencia clave: se reinicia al cambiar de ruta
 
   const drawerContent = (
     <Box sx={{ textAlign: "center", color: theme.palette.sidebar.inactive }}>
@@ -105,12 +105,21 @@ export default function Sidebar({ setOpen}) {
           </IconButton>
           <IconButton
             component="a"
-            href="https://github.com/tu-usuario"
+            href="https://github.com/RodolfoAgosto"
             target="_blank"
             rel="noopener"
             sx={{ color: theme.palette.sidebar.inactive, "&:hover": { color: theme.palette.sidebar.active } }}
           >
             <GitHubIcon />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.youtube.com/@tuusuario"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: theme.palette.sidebar.inactive, "&:hover": { color: theme.palette.sidebar.active } }}
+          >
+            <YouTube />
           </IconButton>
         </Stack>
       </Stack>
@@ -120,11 +129,11 @@ export default function Sidebar({ setOpen}) {
           <ListItemButton
             key={item.text}
             onClick={() => scrollToSection(item.id)}
-             selected={activeId === item.id} // 👈 marca el activo
+            selected={activeId === item.id} // 👈 marca el activo
             sx={{
-               "&.Mui-selected": {
+              "&.Mui-selected": {
                 backgroundColor: theme.palette.sidebar.background,
-                color: theme.palette.sidebar.active, 
+                color: theme.palette.sidebar.active,
               },
               "&:not(.Mui-selected)": {
                 backgroundColor: theme.palette.sidebar.background,
@@ -141,7 +150,10 @@ export default function Sidebar({ setOpen}) {
                 {item.icon}
               </ListItemIcon>
             )}
-            <ListItemText primary={item.text} sx={{ '& .MuiTypography-root': { color: 'inherit' } }}  />
+            <ListItemText
+              primary={item.text}
+              sx={{ "& .MuiTypography-root": { color: "inherit" } }}
+            />
           </ListItemButton>
         ))}
       </List>
@@ -149,20 +161,18 @@ export default function Sidebar({ setOpen}) {
   );
 
   return (
-    <>
-      <Drawer
-        variant="permanent"
-        slotProps={{
+    <Drawer
+      variant="permanent"
+      slotProps={{
         paper: {
           sx: {
             backgroundColor: theme.palette.sidebar.background,
-            width: 310,
+            width: { xs: 250, md: 327, lg: 296 },
           },
         },
       }}
-      >
-        {drawerContent}
-      </Drawer>
-    </>
+    >
+      {drawerContent}
+    </Drawer>
   );
 }
