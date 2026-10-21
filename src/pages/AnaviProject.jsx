@@ -4,11 +4,35 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import DescriptionIcon from "@mui/icons-material/Description";
 import EAButtonIcon from '../components/EAButtonIcon';
 import ArquitecturaAnavi from "../components/Anavi/ArquitecturaAnavi";
-import CarouselInterfaces from "../components/Auzonia/CarouselInterfaces";
+import InterfacesImageList from "../components/Anavi/InterfacesImageList";
 import { ReactComponent as SQLServerIcon } from '../assets/icons/microsoftsqlserver.svg';
 import { ReactComponent as CSharpIcon } from '../assets/icons/CSharp.svg';
 import { ReactComponent as DotNetIcon } from '../assets/icons/aspnet.svg';
 import { SiBootstrap as BootstrapIcon, } from "react-icons/si";
+import VideoThumbnail from "../components/VideoThumbnail";
+
+const videos = [
+  { title:"Video de demostración - Gestión de Eventos",
+    videoUrl : "https://www.youtube.com/embed/BDYn7ldwxpM" ,
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Gestion_Eventos.png",
+    logoAlt: "anavi_portada",
+  },
+  { title : "Video de demostración - Cálculo Dinámico del Presupuesto y Recomendaciones Inteligentes" ,
+    videoUrl : "https://www.youtube.com/embed/zCutKMYx32g" ,
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Presupuesto_Recomendaciones.png" ,
+    logoAlt: "anavi_portada",
+  },
+  { title : "Video de demostración - Sistema de Calificaciones y Reputación",
+    videoUrl : "https://www.youtube.com/embed/StipNK77aQE" ,
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Calificaciones_Reputacion.png",
+    logoAlt: "anavi_portada",
+  },
+  { title:"Video de demostración - Permisos y Perfiles + Patrón Composite" ,
+    videoUrl : "https://www.youtube.com/embed/JOx6IyrJBGE" ,
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Permisos_Composite.png",
+    logoAlt: "anavi_portada",
+  },
+]
 
 const anaviSections = [
   { id: "arquitectura", title: "Arquitectura" },
@@ -16,7 +40,7 @@ const anaviSections = [
     id: "procesos",
     title: "Procesos Core",
     subSections: [
-      { id: "seleccion-proveedores", title: "Flujo de selección de proveedores" },
+      { id: "gestion-eventos", title: "Gestión de Eventos" },
       { id: "presupuesto-recomendacion", title: "Cálculo dinámico del presupuesto y recomendaciones inteligentes" },
       { id: "calificaciones-reputacion", title: "Sistema de calificaciones y reputación" },
     ],
@@ -26,12 +50,11 @@ const anaviSections = [
     title: "Seguridad",
     subSections: [
       { id: "login", title: "Login/Logout" },
-      { id: "permisos", title: "Permisos y perfiles + Patron Composite" },
       { id: "bitacora", title: "Bitácora de Auditoria" },
       { id: "encriptado", title: "Encriptado" },
     ],
   },
-  { id: "multidioma", title: "Multidioma + Patron Observer" },  
+  { id: "permisos", title: "Permisos y perfiles + Patron Composite" },
   {
     id: "reportes",
     title: "Reportes",
@@ -48,11 +71,15 @@ const anaviSections = [
       { id: "backup", title: "Backup / Restore" },
     ],
   },
-  { id: "interfaz-usuario", title: "Interfaz de Usuario" },
+  { id: "interfaz-usuario", 
+    title: "Interfaz de Usuario",
+    subSections: [
+      { id: "interfaces", title: "Interfaces" }, 
+      { id: "multidioma", title: "Multidioma + Patrón Observer" }, 
+    ],
+  },
   { id: "stack", title: "Stack tecnológico" },
 ];
-
-
 
 const AnaviProject = () => {
   const theme = useTheme();
@@ -91,7 +118,7 @@ const AnaviProject = () => {
               size="large"
               color="primary"
               startIcon={<DescriptionIcon />}
-              href="/docs/DocumentacionTecnica.pdf"
+              href="/docs/Anavi_Documentacion.pdf"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ textTransform: "none" }}
@@ -103,7 +130,7 @@ const AnaviProject = () => {
             <Button
               startIcon={<EAButtonIcon size={55} />}
               size="large"
-              href="https://github.com/tu-usuario/tu-repo"
+              href="/docs/Anavi_Eventos_Corporativos.EAP"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -160,7 +187,7 @@ const AnaviProject = () => {
               size="large"
               color="primary"
               startIcon={<GitHubIcon />}
-              href="https://github.com/tu-usuario/tu-repo"
+              href="https://github.com/RodolfoAgosto/anavi-eventos-corporativos"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ textTransform: "none" }}
@@ -202,12 +229,12 @@ const AnaviProject = () => {
             </Typography>
           </Box>
           {/* Flujo de elección de proveedores */}
-          <Box key={anaviSections[1].subSections[1].id} 
-               id={anaviSections[1].subSections[1].id} 
+          <Box key={anaviSections[1].subSections[0].id} 
+               id={anaviSections[1].subSections[0].id} 
                sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
           >
             <Typography variant="h5" gutterBottom>
-              {anaviSections[1].subSections[1].title}
+              {anaviSections[1].subSections[0].title}
             </Typography>
             <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
               A continuación se describe el flujo que sigue un cliente para elegir proveedores dentro de la plataforma:
@@ -245,25 +272,24 @@ const AnaviProject = () => {
                 <strong>Confirmación y contratos:</strong> Si el usuario confirma, el sistema genera automáticamente el evento y los contratos asociados a los proveedores seleccionados.
               </Typography>
             </Box>
+            <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+              <img 
+                src="/assets/Anavi/Image22.png" 
+                alt="Crear Cuenta" 
+                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+              />
+            </Box>
             {/* Video de demostración */}
             <Box sx={{ mb: 4, px: { xs: 2, sm: 4, md: 0 } }}>
               <Typography variant="h6" gutterBottom sx={{ mt: 6 }}>
                 Demostración del proceso en la aplicación
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/p9ws39aj0ZM"
-                    title="Video de demostración - Flujo de elección de proveedores"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
-                </Box>
-              </Box>
+              <VideoThumbnail
+                title={videos[0].title}
+                videoUrl={videos[0].videoUrl}
+                logoSrc={videos[0].logoSrc}
+                logoAlt={videos[0].logoAlt}
+              />
             </Box>
           </Box>
           {/* Cálculo dinámico del presupuesto*/}
@@ -322,26 +348,25 @@ const AnaviProject = () => {
               espacios cuya ubicación se encuentre dentro del rango de distancia
               máximo ingresado por el cliente.
             </Typography>
+            </Box>
+            <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+              <img 
+                src="/assets/Anavi/Image23.png" 
+                alt="Crear Cuenta" 
+                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+              />
             </Box>  
-                        {/* Video de demostración */}
+            {/* Video de demostración */}
             <Box sx={{ mb: 4, px: { xs: 2, sm: 4, md: 0 } }}>
               <Typography variant="h6" gutterBottom sx={{ mt: 6 }}>
                 Demostración del proceso en la aplicación
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/p9ws39aj0ZM"
-                    title="Video de demostración - Flujo de elección de proveedores"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
-                </Box>
-              </Box>
+              <VideoThumbnail
+                title={videos[1].title}
+                videoUrl={videos[1].videoUrl}
+                logoSrc={videos[1].logoSrc}
+                logoAlt={videos[1].logoAlt}
+              />
             </Box>
           </Box>   
           {/* Sistema de puntuación y valoración*/}
@@ -374,25 +399,23 @@ const AnaviProject = () => {
           negativas.
         </Typography>
       </Box>
+                  <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+              <img 
+                src="/assets/Anavi/Image24.png" 
+                alt="Crear Cuenta" 
+                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+              />
+</Box>
             <Box sx={{ ml: 0, mb: 4, px: { xs: 2, sm: 4, md: 0 } }} >
               <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
                 Demostración del Proceso en la Aplicación
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/p9ws39aj0ZM"
-                    title="Video de demostración - Gestión de Compras"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  >                
-                  </iframe>
-                </Box>
-              </Box>
+              <VideoThumbnail
+                title={videos[2].title}
+                videoUrl={videos[2].videoUrl}
+                logoSrc={videos[2].logoSrc}
+                logoAlt={videos[2].logoAlt}
+              />
             </Box>
           </Box>
         </Box> 
@@ -417,26 +440,13 @@ const AnaviProject = () => {
             <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
               El proceso de <strong>login/logout</strong> forma parte de la capa de Seguridad. Permite a los usuarios autenticarse de forma segura en el sistema y cerrar sesión, garantizando control de acceso y protección de la información.
             </Typography>
-            <Box component="ul" sx={{ pl: 3 }}>
+                        <Box component="ul" sx={{ pl: 3 }}>
               <Typography component="li" variant="body2" paragraph>
-                <strong>Diferenciación de accesos:</strong> El sistema distingue entre usuario inexistente o contraseña incorrecta y responde según corresponda.
-              </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap", mt: 4, mb: 4 }}>
-                <Box sx={{ flex: 1, maxWidth: 180 }}>
-                  <img
-                    src="/assets/Auzonia/Usuario_no_registrado.png" 
-                    alt="Usuario no registrado.png"                 
-                    style={{ width: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
-                </Box>
-                <Box sx={{ flex: 1, maxWidth: 180 }}>
-                  <img
-                    src="/assets/Auzonia/Contrasena_incorrecta.png" 
-                    alt="Contrasena incorrecta" 
-                    style={{ width: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  />
-                </Box>
-              </Box>
+                <strong>Autenticación y personalización de acceso:</strong> El sistema identifica automáticamente el tipo de usuario que inicia sesión —organizador, proveedor o cliente— y carga el layout y las funcionalidades específicas correspondientes a su rol, garantizando una experiencia personalizada y segura.
+			  </Typography>
+              <Typography component="li" variant="body2" paragraph>
+                <strong>Validación automática de correo electrónico::</strong> El sistema utiliza una API de Google para enviar de forma automática un código de verificación al correo del usuario, garantizando la autenticidad del email registrado y reforzando la seguridad del proceso de registro.
+			  </Typography>
               <Typography component="li" variant="body2" paragraph>
                <strong>Bloqueo de usuario:</strong> El usuario es bloqueado tras el tercer intento con contraseña incorrecta.
               </Typography>
@@ -453,105 +463,32 @@ const AnaviProject = () => {
                 <strong>Actualización de intentos:</strong> Tras un acceso válido, se reinicia el contador de intentos pendientes del usuario.
               </Typography>
               <Typography component="li" variant="body2" paragraph>
-                <strong>Actualización del layout:</strong> Se refleja la sesión iniciada, por ejemplo, mostrando el nombre del usuario en el StatusStrip.
+                <strong>Estados de acceso:</strong> Se utiliza un Enum con las opciones: AccesoValido, Reintentar, UsuarioBloqueado y UsuarioInexistente.
               </Typography>
               {/* Imagen usuario logueado */}
               <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Auzonia/Ingreso_valido.png" 
-                alt="Arquitectura Auzonia" 
+                src="/assets/Anavi/Ingreso.png" 
+                alt="Crear Cuenta" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                 />
               </Box>
-              <Typography component="li" variant="body2" paragraph>
-                <strong>Estados de acceso:</strong> Se utiliza un Enum con las opciones: AccesoValido, Reintentar, UsuarioBloqueado y UsuarioInexistente.
-              </Typography>
+              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+              <img 
+                src="/assets/Anavi/CrearCuenta.png" 
+                alt="Crear Cuenta" 
+                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+                />
+              </Box>
             </Box> 
           </Box>  
-          {/* Permisos y Perfiles + Patron Composite */}
+          {/* Bitacora de auditoria */}
           <Box key={anaviSections[2].subSections[1].id} 
                id={anaviSections[2].subSections[1].id} 
                sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
           >
             <Typography variant="h5" gutterBottom>
               {anaviSections[2].subSections[1].title}
-            </Typography>
-            <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-              El sistema administra el acceso de los usuarios a funcionalidades y datos mediante la
-               asignación de permisos. Cada usuario puede recibir uno o más perfiles/permisos, que agrupan 
-               varios permisos atómicos. Esta estructura jerárquica permite heredar permisos de 
-               manera automática y flexible, utilizando el patrón <strong>Composite</strong> para
-                construir perfiles complejos a partir de permisos simples.
-            </Typography>
-            <Box component="ul" sx={{ pl: 3 }}>
-              <Typography component="li" variant="body2" paragraph>
-                <strong>Visualización del árbol de permisos:</strong> Desde el módulo Sistema se puede observar el árbol completo de permisos, incluyendo todas las familias y patentes del sistema, con sus jerarquías detalladas en cada nodo.
-              </Typography>
-              {/* Imagen Arbol de Permisos */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Arbol_Permisos.png" 
-                  alt="Arbol Permisos" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
-              <Typography component="li" variant="body2" paragraph>
-                <strong>Control de recursividad:</strong> El sistema impide asignar una familia padre que sea hija de la familia a asignar, evitando bucles infinitos en la estructura.
-              </Typography>
-              {/* Imagen Recursividad */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Recursividad.png" 
-                  alt="Recursividad" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
-              <Typography component="li" variant="body2" paragraph>
-                <strong>Uso del patrón Composite:</strong> Se implementa el patrón Composite para permitir construir perfiles complejos a partir de permisos simples, facilitando la herencia y composición de permisos.
-              </Typography>
-              <Typography component="li" variant="body2" paragraph>
-                <strong>Asignación múltiple de permisos:</strong> Cada usuario puede recibir más de un permiso o familia, lo que permite definir accesos flexibles y personalizados.
-              </Typography>
-              {/* Administracion Perfiles */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Administracion_Perfiles.png" 
-                  alt="Administracion Perfiles" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
-              <Typography component="li" variant="body2" paragraph>
-                <strong>Niveles de acceso:</strong> El sistema contempla distintos niveles de autorización, ya sea por módulo completo o por funcionalidades específicas dentro de cada módulo.
-              </Typography>
-              <Box sx={{ ml: 0, mb: 4, px: { xs: 2, sm: 4, md: 0 } }} >
-                <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
-                  Demostración del Proceso en la Aplicación
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                  <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/p9ws39aj0ZM"
-                      title="Video de demostración - Gestión de Compras"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                    >                
-                    </iframe>
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
-          </Box>        
-          {/* Bitacora de auditoria */}
-          <Box key={anaviSections[2].subSections[2].id} 
-               id={anaviSections[2].subSections[2].id} 
-               sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
-          >
-            <Typography variant="h5" gutterBottom>
-              {anaviSections[2].subSections[2].title}
             </Typography>
             <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
               La <strong>bitácora de auditoría</strong> tiene como objetivo central registrar y poner
@@ -618,16 +555,23 @@ const AnaviProject = () => {
                   <strong>Identificador:</strong> Componente del software que generó el registro 
                   (ej.: <code>BackUp_DAL</code> o <code>FormBackUp</code>).
                 </Typography>
+                <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+                  <img 
+                    src="/assets/Anavi/Bitacora.png" 
+                    alt="Crear Cuenta" 
+                    style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+                  />
+                </Box>
               </Box>
             </Box> 
           </Box>
           {/* Encriptado */}
-          <Box key={anaviSections[2].subSections[3].id} 
-               id={anaviSections[2].subSections[3].id} 
+          <Box key={anaviSections[2].subSections[2].id} 
+               id={anaviSections[2].subSections[2].id} 
                sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
           >
             <Typography variant="h5" gutterBottom>
-              {anaviSections[2].subSections[3].title}
+              {anaviSections[2].subSections[2].title}
             </Typography>
             <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
               <strong>Gestión de encriptado:</strong> Es la responsable de implementar los algoritmos de encriptación 
@@ -655,57 +599,55 @@ const AnaviProject = () => {
             </Box>
           </Box>
       </Box>
-      {/* Multidioma + Patron Observer */}
-      <Box key={anaviSections[3].id} id={anaviSections[3].id} sx={{ mt: 0 }}>
-        <Typography variant="h4" gutterBottom>{anaviSections[3].title}</Typography>
-          <Box sx={{ maxWidth: "1000px", margin: "0 auto", py: 1, px: { xs: 2, sm: 6 } }}>        
-            <Typography variant="body1" paragraph  sx={{ textAlign: "justify" }}> 
-              El sistema permite cambiar dinámicamente el idioma de todas las leyendas y títulos de
-               la interfaz. Al cargar un nuevo idioma, lo guarda con traducciones iniciales en 
-               español y registra el alta en la bitácora. Solo puede habilitarse cuando todas las 
-               leyendas estén traducidas; de lo contrario, permanece deshabilitado hasta completar
-                las traducciones. Una vez finalizadas, el idioma se habilita y el sistema notifica
-                 el éxito de la operación.
+      {/* Permisos y Perfiles + Patron Composite */}
+          <Box key={anaviSections[3].id} 
+               id={anaviSections[3].id} 
+               sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
+          >
+            <Typography variant="h5" gutterBottom>
+              {anaviSections[3].title}
             </Typography>
-            <Box component="ul" sx={{ pl: 3 }}>
-              <Typography component="li" variant="body2" paragraph>
-                La traducción abarca todos los formularios del sistema, incluyendo formularios hijos.
-              </Typography>
-              <Typography component="li" variant="body2" paragraph>
-                El sistema cuenta con 244 mensajes traducibles.
-              </Typography>
-              <Typography component="li" variant="body2" paragraph>
-                Actualmente soporta inglés y español, con la opción de agregar nuevos idiomas.
-              </Typography>
-            </Box>
             <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-              <strong>Patrón Observer aplicado a Multiidioma:</strong> Permite que todos los formularios actualicen dinámicamente sus leyendas y títulos 
-              según el idioma seleccionado, manteniendo la interfaz consistente.
+              El sistema administra el acceso de los usuarios a funcionalidades y datos mediante la
+               asignación de permisos. Cada usuario puede recibir uno o más perfiles/permisos, que agrupan 
+               varios permisos atómicos. Esta estructura jerárquica permite heredar permisos de 
+               manera automática y flexible, utilizando el patrón <strong>Composite</strong> para
+                construir perfiles complejos a partir de permisos simples.
             </Typography>
             <Box component="ul" sx={{ pl: 3 }}>
               <Typography component="li" variant="body2" paragraph>
-                <strong>Interfaz IObservador:</strong> Define la propiedad <code>Idioma</code> y el método <code>Actualizar()</code>, 
-                que todos los formularios implementan para gestionar sus textos.
+                <strong>Control de recursividad:</strong> El sistema impide asignar una familia padre que sea hija de la familia a asignar, evitando bucles infinitos en la estructura.
               </Typography>
               <Typography component="li" variant="body2" paragraph>
-                <strong>Formularios como observadores:</strong> Cada formulario implementa <code>IObservador</code> y actualiza sus leyendas 
-                y títulos al ejecutar <code>Actualizar()</code> utilizando la propiedad <code>Idioma</code>.
+                <strong>Uso del patrón Composite:</strong> Se implementa el patrón Composite para permitir construir perfiles complejos a partir de permisos simples, facilitando la herencia y composición de permisos.
               </Typography>
               <Typography component="li" variant="body2" paragraph>
-                <strong>Formulario MDIPrincipal (sujeto):</strong> Mantiene la lista de observadores con los métodos <code>Agregar()</code> y <code>Quitar()</code>. 
-                Al seleccionar un nuevo idioma, el método <code>ActualizarIdioma(idioma)</code> notifica a todos los observadores para actualizar la interfaz.
+                <strong>Asignación múltiple de permisos:</strong> Cada usuario puede recibir más de un permiso o familia, lo que permite definir accesos flexibles y personalizados.
               </Typography>
+              {/* Administracion Perfiles */}
+              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+                <img 
+                  src="/assets/Anavi/Perfiles.png" 
+                  alt="Administracion Perfiles" 
+                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+                />
+              </Box>
+              <Typography component="li" variant="body2" paragraph>
+                <strong>Niveles de acceso:</strong> El sistema contempla distintos niveles de autorización, ya sea por módulo completo o por funcionalidades específicas dentro de cada módulo.
+              </Typography>
+              <Box sx={{ ml: 0, mb: 4, px: { xs: 2, sm: 4, md: 0 } }} >
+                <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
+                  Demostración del Proceso en la Aplicación
+                </Typography>
+                <VideoThumbnail
+                  title={videos[3].title}
+                  videoUrl={videos[3].videoUrl}
+                  logoSrc={videos[3].logoSrc}
+                  logoAlt={videos[3].logoAlt}
+                />
+              </Box>
             </Box>
-            {/* Imagen Arbol de Permisos */}
-            <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-              <img 
-                src="/assets/Auzonia/Arbol_Permisos.png" 
-                alt="Arbol Permisos" 
-                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-              />
-            </Box>
-          </Box>
-        </Box>
+          </Box> 
         {/* Reportes */}
         <Box key={anaviSections[4].id} id={anaviSections[4].id} sx={{ mt: 0 }}>
           <Typography variant="h4" gutterBottom>{anaviSections[4].title}</Typography>
@@ -731,8 +673,8 @@ const AnaviProject = () => {
             {/* Imagen Arbol de Permisos */}
             <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Auzonia/Arbol_Permisos.png" 
-                alt="Arbol Permisos" 
+                src="/assets/Anavi/Reportes.png" 
+                alt="Reportes" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
             </Box>
@@ -792,14 +734,6 @@ const AnaviProject = () => {
                       En caso de error, solo un usuario con permisos de restauración podrá acceder y actuar sobre la base.
                     </Typography>
                   </Box>
-                  {/* Imagen Arbol de Permisos */}
-                  <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                    <img 
-                      src="/assets/Auzonia/Arbol_Permisos.png" 
-                      alt="Arbol Permisos" 
-                      style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                    />
-                  </Box>
                 </Box>
               </Box>    
               {/* Backup / Restore */}
@@ -807,6 +741,9 @@ const AnaviProject = () => {
                 id={anaviSections[5].subSections[1].id} 
                   sx={{ mb: 4, px: { xs: 2, sm: 4, md: 6 } }}
               >
+                <Typography variant="h5" gutterBottom>
+                  {anaviSections[5].subSections[1].title}
+                </Typography>
                 <Typography variant="body2" paragraph sx={{ textAlign: "justify" }}>
                   El sistema gestiona la continuidad de datos mediante un módulo de
                   Backup/Restore que facilita la administración y recuperación de
@@ -841,14 +778,15 @@ const AnaviProject = () => {
                       trazabilidad del proceso.
                     </Typography>
                   </Box>
-                  {/* Imagen Arbol de Permisos */}
+                              {/* Imagen Arbol de Permisos */}
                   <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
                     <img 
-                      src="/assets/Auzonia/Arbol_Permisos.png" 
+                      src="/assets/Anavi/Backup-Restore.png" 
                       alt="Arbol Permisos" 
                       style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                     />
                   </Box>
+      
                 </Box>
         
         {/* Interfaz de usuario */}
@@ -885,23 +823,64 @@ const AnaviProject = () => {
       <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
         Además, el sistema es <strong>totalmente responsive</strong>, asegurando una visualización y usabilidad óptimas tanto en equipos de escritorio como en dispositivos móviles.
       </Typography>
-              <Typography variant="h5" gutterBottom>
-                Mapa de navegación
+      <Box key={anaviSections[6].subSections[0].id} id={anaviSections[6].subSections[0].id} sx={{ mt: 0 }}>
+         <Typography variant="h5" gutterBottom>{anaviSections[6].subSections[0].title}</Typography>
+             <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+                <InterfacesImageList/>
+             </Box>
+         </Box>
+
+      {/* Multidioma + Patron Observer */}
+      <Box key={anaviSections[6].subSections[1].id} id={anaviSections[6].subSections[1].id} sx={{ mt: 0 }}>
+        <Typography variant="h5" gutterBottom>{anaviSections[6].subSections[1].title}</Typography>
+          <Box sx={{ maxWidth: "1000px", margin: "0 auto", py: 1, px: { xs: 2, sm: 6 } }}>        
+            <Typography variant="body1" paragraph  sx={{ textAlign: "justify" }}> 
+              El sistema permite cambiar dinámicamente el idioma de todas las leyendas y títulos de
+               la interfaz. Al cargar un nuevo idioma, lo guarda con traducciones iniciales en 
+               español y registra el alta en la bitácora. Solo puede habilitarse cuando todas las 
+               leyendas estén traducidas; de lo contrario, permanece deshabilitado hasta completar
+                las traducciones. Una vez finalizadas, el idioma se habilita y el sistema notifica
+                 el éxito de la operación.
+            </Typography>
+            <Box component="ul" sx={{ pl: 3 }}>
+              <Typography component="li" variant="body2" paragraph>
+                La traducción abarca todos los formularios del sistema, incluyendo formularios hijos.
               </Typography>
-              {/* Imagen Arbol de Permisos */}
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <img 
-                  src="/assets/Auzonia/Arbol_Permisos.png" 
-                  alt="Arbol Permisos" 
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                />
-              </Box>
-                <Typography variant="h5" gutterBottom>
-                Interfaces del sistema
-                </Typography>
-              <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
-                <CarouselInterfaces/>
-              </Box>
+              <Typography component="li" variant="body2" paragraph>
+                El sistema cuenta con 244 mensajes traducibles.
+              </Typography>
+              <Typography component="li" variant="body2" paragraph>
+                Actualmente soporta inglés y español, con la opción de agregar nuevos idiomas.
+              </Typography>
+            </Box>
+            <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
+              <strong>Patrón Observer aplicado a Multidioma:</strong> Permite que todos los formularios actualicen dinámicamente sus leyendas y títulos 
+              según el idioma seleccionado, manteniendo la interfaz consistente.
+            </Typography>
+            <Box component="ul" sx={{ pl: 3 }}>
+              <Typography component="li" variant="body2" paragraph>
+                <strong>Interfaz IObservador:</strong> Define la propiedad <code>Idioma</code> y el método <code>Actualizar()</code>, 
+                que todos los formularios implementan para gestionar sus textos.
+              </Typography>
+              <Typography component="li" variant="body2" paragraph>
+                <strong>Formularios como observadores:</strong> Cada formulario implementa <code>IObservador</code> y actualiza sus leyendas 
+                y títulos al ejecutar <code>Actualizar()</code> utilizando la propiedad <code>Idioma</code>.
+              </Typography>
+              <Typography component="li" variant="body2" paragraph>
+                <strong>Formulario MDIPrincipal (sujeto):</strong> Mantiene la lista de observadores con los métodos <code>Agregar()</code> y <code>Quitar()</code>. 
+                Al seleccionar un nuevo idioma, el método <code>ActualizarIdioma(idioma)</code> notifica a todos los observadores para actualizar la interfaz.
+              </Typography>
+            </Box>
+            {/* Imagen Arbol de Permisos */}
+            <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
+              <img 
+                src="/assets/Anavi/Multidioma.png" 
+                alt="Arbol Permisos" 
+                style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
+              />
+            </Box>
+          </Box>
+        </Box>
             </Box>
           </Box>
         </Box>    

@@ -11,6 +11,30 @@ import { ReactComponent as DotNetIcon } from '../assets/icons/donet.svg';
 import { ReactComponent as SQLServerIcon } from '../assets/icons/microsoftsqlserver.svg';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import VideoThumbnail from "../components/VideoThumbnail";
+
+const videos = [
+  { title:"Video de demostración - Gestión de Compras",
+    videoUrl : "https://www.youtube.com/embed/ssGL0uKugoQ" ,
+    logoSrc: "/assets/Auzonia/Auzonia_Gestion_Compras.png",
+    logoAlt: "anavi_portada",
+  },
+  { title : "Video de demostración - Gestión de Entregas" ,
+    videoUrl : "https://www.youtube.com/embed/OQP8eX4zHcA" ,
+    logoSrc: "/assets/Auzonia/Auzonia_Gestion_Entregas.png" ,
+    logoAlt: "anavi_portada",
+  },
+  { title : "Video de demostración - Valuación de Inventarios",
+    videoUrl : "https://www.youtube.com/embed/Ox8pG_Y2T2U" ,
+    logoSrc: "/assets/Auzonia/Auzonia_Valuacion_Inventarios.png",
+    logoAlt: "anavi_portada",
+  },
+  { title:"Video de demostración - Multidioma + Observer" ,
+    videoUrl : "https://www.youtube.com/embed/hZbOHes4YaQ" ,
+    logoSrc: "/assets/Auzonia/Auzonia_Multidioma_Patron_Observer.png",
+    logoAlt: "anavi_portada",
+  },
+]
 
 const auzoniaSections = [
   { id: "arquitectura", title: "Arquitectura" },
@@ -97,7 +121,7 @@ const AuzoniaProject = () => {
               size="large"
               color="primary"
               startIcon={<DescriptionIcon />}
-              href="/docs/DocumentacionTecnica.pdf"
+              href="/docs/Auzonia_Documentacion.pdf"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ textTransform: "none" }}
@@ -109,7 +133,7 @@ const AuzoniaProject = () => {
             <Button size="large"
                     color="primary"
                     startIcon={<BuildIcon />}
-                    href="/docs/ManualInstalacion.pdf"
+                    href="/docs/Auzonia_Manual_Instalacion.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{ textTransform: "none" }}
@@ -120,7 +144,7 @@ const AuzoniaProject = () => {
             <Button
               startIcon={<EAButtonIcon size={55} />}
               size="large"
-              href="https://github.com/tu-usuario/tu-repo"
+              href="/docs/Auzonia _Gestion_Inventarios.EAP"
               target="_blank"
               rel="noopener noreferrer"
               sx={{
@@ -177,7 +201,7 @@ const AuzoniaProject = () => {
               size="large"
               color="primary"
               startIcon={<GitHubIcon />}
-              href="https://github.com/tu-usuario/tu-repo"
+              href="https://github.com/RodolfoAgosto/auzonia-gestion-inventarios"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ textTransform: "none" }}
@@ -268,21 +292,12 @@ const AuzoniaProject = () => {
               <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
                 Demostración del Proceso en la Aplicación
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/ssGL0uKugoQ"
-                    title="Video de demostración - Gestión de Compras"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  >                
-                  </iframe>
-                </Box>
-              </Box>
+              <VideoThumbnail
+                title={videos[0].title}
+                videoUrl={videos[0].videoUrl}
+                logoSrc={videos[0].logoSrc}
+                logoAlt={videos[0].logoAlt}
+              />
             </Box>
           </Box>  
           {/* Gestión de Entregas*/}
@@ -346,21 +361,12 @@ const AuzoniaProject = () => {
               <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
                 Demostración del Proceso en la Aplicación
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/OQP8eX4zHcA"
-                    title="Video de demostración - Gestión de Entregas"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  >                
-                  </iframe>
-                </Box>
-              </Box>
+              <VideoThumbnail
+                title={videos[1].title}
+                videoUrl={videos[1].videoUrl}
+                logoSrc={videos[1].logoSrc}
+                logoAlt={videos[1].logoAlt}
+              />
             </Box>
           </Box>
           {/* Valuación de Inventario*/}
@@ -407,25 +413,15 @@ const AuzoniaProject = () => {
               <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
                 Demostración del Proceso en la Aplicación
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/Ox8pG_Y2T2U"
-                    title="Video de demostración - Valuación de Inventarios"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                  >                
-                  </iframe>
-                </Box>
-              </Box>
+              <VideoThumbnail
+                title={videos[2].title}
+                videoUrl={videos[2].videoUrl}
+                logoSrc={videos[2].logoSrc}
+                logoAlt={videos[2].logoAlt}
+              />
             </Box>
           </Box>
         </Box> 
-
         {/* Seguridad*/}
         <Box key={auzoniaSections[2].id} id={auzoniaSections[2].id} sx={{ mt: 0 }}>
           <Typography variant="h4" gutterBottom>{auzoniaSections[2].title}</Typography>
@@ -568,26 +564,6 @@ const AuzoniaProject = () => {
               <Typography component="li" variant="body2" paragraph>
                 <strong>Niveles de acceso:</strong> El sistema contempla distintos niveles de autorización, ya sea por módulo completo o por funcionalidades específicas dentro de cada módulo.
               </Typography>
-              <Box sx={{ ml: 0, mb: 4, px: { xs: 2, sm: 4, md: 0 } }} >
-                <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
-                  Demostración del Proceso en la Aplicación
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
-                  <Box sx={{ position: "relative", width: "100%", maxWidth: 800, aspectRatio: "16/9" }}>
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/hZbOHes4YaQ"
-                      title="Video de demostración - Multidioma + Observer"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      style={{ borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
-                    >                
-                    </iframe>
-                  </Box>
-                </Box>
-              </Box>
             </Box>
           </Box>        
           {/* Bitacora de auditoria */}
@@ -763,6 +739,17 @@ const AuzoniaProject = () => {
                 />
               </Card>
             </Box> 
+            <Box sx={{ ml: 0, mb: 4, px: { xs: 2, sm: 4, md: 0 } }} >
+              <Typography variant="h6" gutterBottom sx={{mt: 6, pl: 0}}>
+                Demostración del Proceso en la Aplicación
+              </Typography>
+              <VideoThumbnail
+                title={videos[3].title}
+                videoUrl={videos[3].videoUrl}
+                logoSrc={videos[3].logoSrc}
+                logoAlt={videos[3].logoAlt}
+              />
+            </Box>
           </Box>
         </Box>
         {/* Casos de prueba */}
