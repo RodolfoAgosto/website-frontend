@@ -25,8 +25,14 @@ export default function ContactSection() {
   const [message, setMessage] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [sending, setSending] = useState(false);
-  const [dialog, setDialog] = useState(null); // null | "success" | "error"
+  const [open, setOpen] = useState(false);
+  const [result, setResult] = useState("success"); // "success" | "error"
   const [error, setError] = useState("");
+
+  const showResult = (value) => {
+    setResult(value);
+    setOpen(true);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +45,7 @@ export default function ContactSection() {
 
     // Campo trampa: solo los bots lo completan. Se simula éxito sin enviar nada.
     if (honeypot) {
-      setDialog("success");
+      showResult("success");
       return;
     }
 
@@ -56,21 +62,21 @@ export default function ContactSection() {
       });
 
       if (response.ok) {
-        setDialog("success");
+        showResult("success");
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        setDialog("error");
+        showResult("error");
       }
     } catch {
-      setDialog("error");
+      showResult("error");
     } finally {
       setSending(false);
     }
   };
 
-  const isSuccess = dialog === "success";
+  const isSuccess = result === "success";
   const Icon = isSuccess ? CheckCircleOutlineIcon : ErrorOutlineIcon;
   const iconColor = isSuccess ? theme.palette.success.main : theme.palette.error.main;
 
@@ -144,8 +150,8 @@ export default function ContactSection() {
       </Box>
 
       <Dialog
-        open={dialog !== null}
-        onClose={() => setDialog(null)}
+        open={open}
+        onClose={() => setOpen(false)}
         maxWidth="xs"
         fullWidth
         slotProps={{
@@ -180,7 +186,7 @@ export default function ContactSection() {
           </Typography>
         </DialogContent>
         <DialogActions sx={{ justifyContent: "center", pb: 2 }}>
-          <Button variant="contained" onClick={() => setDialog(null)}>
+          <Button variant="contained" onClick={() => setOpen(false)}>
             Cerrar
           </Button>
         </DialogActions>
