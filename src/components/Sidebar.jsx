@@ -105,7 +105,7 @@ export default function Sidebar({ setOpen }) {
           </IconButton>
           <IconButton
             component="a"
-            href="https://github.com/tu-usuario"
+            href="https://github.com/RodolfoAgosto"
             target="_blank"
             rel="noopener"
             sx={{ color: theme.palette.sidebar.inactive, "&:hover": { color: theme.palette.sidebar.active } }}

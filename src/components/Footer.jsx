@@ -1,12 +1,17 @@
 import { Box, Typography, useTheme } from "@mui/material";
+import reactIcon from "../assets/icons/react-original.svg";
+import postgreSQLIcon from "../assets/icons/postgresql-original.svg";
+import javaIcon from "../assets/icons/java-original.svg";
+import springIcon from "../assets/icons/spring-original.svg";
+import materialUIIcon from "../assets/icons/materialui-original.svg";
 
 // Logos de tecnologías
 const logos = [
-  { name: "React", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
-  { name: "Material UI", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg" },
-  { name: "Spring", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" },
-  { name: "Java", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
-  { name: "PostgreSQL", src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
+  { name: "React", src: reactIcon },
+  { name: "Material UI", src: materialUIIcon },
+  { name: "Spring", src: springIcon },
+  { name: "Java", src: javaIcon },
+  { name: "PostgreSQL", src: postgreSQLIcon },
 ];
 
 export default function Footer() {

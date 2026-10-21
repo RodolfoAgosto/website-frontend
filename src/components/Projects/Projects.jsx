@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Organización Inteligente de Eventos",
     description: "Marketplace de eventos con filtros avanzados, APIs externas, estimaciones inteligentes y sistema de puntuaciones. Incorpora seguridad robusta, auditoría, soporte multiidioma y documentación completa para despliegue profesional.",
-    videoUrl: "https://www.youtube.com/embed/8AHCfZTRGiI",
+    videoUrl:  "https://www.youtube.com/embed/0AEZwfz_MMk",
     path: "/pages/anavi_project",
     github: "https://github.com/usuario/proyecto1",
     logoSrc: "/assets/anavi_portada.png",
