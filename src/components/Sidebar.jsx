@@ -96,7 +96,7 @@ export default function Sidebar({ setOpen }) {
         <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
           <IconButton
             component="a"
-            href="https://www.linkedin.com/in/tu-perfil"
+            href="https://www.linkedin.com/in/rodolfo-agosto/"
             target="_blank"
             rel="noopener"
             sx={{ color: theme.palette.sidebar.inactive, "&:hover": { color: theme.palette.sidebar.active } }}
@@ -114,7 +114,7 @@ export default function Sidebar({ setOpen }) {
           </IconButton>
           <IconButton
             component="a"
-            href="https://www.youtube.com/@tuusuario"
+            href="https://www.youtube.com/@RodolfoJavierAgosto"
             target="_blank"
             rel="noopener noreferrer"
             sx={{ color: theme.palette.sidebar.inactive, "&:hover": { color: theme.palette.sidebar.active } }}
