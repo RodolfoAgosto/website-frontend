@@ -21,10 +21,11 @@ export default function SidebarLayout({ children }) {
         <Box
           component="aside"
           sx={{
-            width: { xs: "250px", md: "300px" },
+            ml: { xs: "250px", md: "327px", lg: "280px" }, 
             bgcolor: theme.palette.sidebar.background,
             color: theme.palette.sidebar.inactive,
             p: 2,
+            pr:0,
             transition: "0.3s",
           }}
         >

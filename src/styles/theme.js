@@ -29,7 +29,7 @@ const theme = createTheme({
     h3: { fontSize: '1.75rem', fontWeight: 500, color: '#44403C' },
     body1: { fontSize: '1rem', color: '#232B2B' },
     body2: { fontSize: '0.875rem', color: '#44403C' },
-    caption: { fontSize: '0.75rem', color: '#6B7280' }, // textos chiquitos   
+    caption: { fontSize: '0.85rem', color: '#6B7280' }, // textos chiquitos   
   },
 });
 

@@ -1,18 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SidebarLayout from './layouts/SidebarLayout';
 import Home from './pages/Home';
-//import Projects from './pages/Projects';
+import AnaviProject from './pages/AnaviProject';
+import AuzoniaProject from './pages/AuzoniaProject';
+import ScrollToTop from './components/ScrollToTop';
+import { NavProvider } from "./context/NavContext";
 
 function App() {
   return (
-    <>      
+    <>
       <Router>
+         <NavProvider>
+        <ScrollToTop />       
         <SidebarLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/projects" element={<Projects />} /> */}
+            <Route path="/pages/anavi_project" element={<AnaviProject />} />
+            <Route path="/pages/auzonia_project" element={<AuzoniaProject />} />    
           </Routes>
         </SidebarLayout>
+        </NavProvider>
       </Router>
     </>
   );
