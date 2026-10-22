@@ -3,7 +3,6 @@ import { ReactComponent as UaiLogo } from '../assets/icons/uai.svg';
 import { ReactComponent as Hceres } from '../assets/icons/hceres.svg';
 import { ReactComponent as Oca } from '../assets/icons/oca.svg';
 import { ReactComponent as Ocp } from '../assets/icons/ocp.svg';
-import { ReactComponent as SpringProfessional } from '../assets/icons/springprofessional.svg';
 
 const educationData = [
   {
@@ -25,14 +24,9 @@ const certificationsData = [
     status: 'Obtenida',
   },
   {
-    logo: <SpringProfessional style={{ width: 60, height: 60, background: 'transparent'  }} />, 
-    title: 'Spring Professional',
-    status: 'En proceso. Fecha estimada: diciembre 2025',
-  },
-  {
     logo: <Ocp style={{ width: 60, height: 60, background: 'transparent'  }} />, 
     title: 'Oracle Certified Professional',
-    status: 'En proceso. Fecha estimada: febrero 2026',
+    status: 'En preparación',
   },
 ];
 
