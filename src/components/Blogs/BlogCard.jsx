@@ -1,12 +1,15 @@
 import React from "react";
-import { Card, CardActionArea, CardMedia, CardContent, Typography } from "@mui/material";
+import { Card, CardActionArea, CardMedia, CardContent, Typography, Chip } from "@mui/material";
 
 export default function BlogCardHorizontal({ title, subtitle, imageSrc, url }) {
+  const inProgress = !url;
+
   return (
-    <Card sx={{ boxShadow: "none", backgroundColor: "transparent",mt:2, mb: 2, }}>
+    <Card sx={{ boxShadow: "none", backgroundColor: "transparent", mt: 2, mb: 2 }}>
       <CardActionArea
-        component="a"
-        href={url}
+        component={inProgress ? "div" : "a"}
+        href={inProgress ? undefined : url}
+        disabled={inProgress}
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "row" }, // XS apilado, SM+ horizontal
@@ -36,6 +39,9 @@ export default function BlogCardHorizontal({ title, subtitle, imageSrc, url }) {
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
             {subtitle}
           </Typography>
+          {inProgress && (
+            <Chip label="En construcción" size="small" sx={{ mt: 1.5 }} />
+          )}
         </CardContent>
       </CardActionArea>
     </Card>
