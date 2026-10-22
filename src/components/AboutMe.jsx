@@ -31,39 +31,37 @@ export default function AboutMe() {
       {/* Texto */}
       <Box sx={{ flex: 1 }}>
         <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-          Mi nombre es Rodolfo, soy <strong>Ingeniero en Sistemas Informáticos</strong> y 
-          <strong> desarrollador backend Java</strong>. Encontré mi vocación a los once años, 
-          lo que me ha permitido una carrera apasionante y con un enfoque claro.
+          Soy <strong>Ingeniero en Sistemas Informáticos</strong> y 
+          <strong> desarrollador backend Java</strong>, con foco en <strong>Spring Boot</strong> y 
+          el diseño de <strong>APIs REST</strong>.
         </Typography>
 
         <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-          He forjado mi experiencia tanto en entornos de <strong>startup</strong>, asumiendo múltiples 
-          responsabilidades, como en grandes multinacionales como <strong>Renault</strong> y 
-          <strong> Santander</strong>, donde adquirí experiencia en procesos estandarizados, 
-          cumplimiento de normativas y trabajo por objetivos. Esta versatilidad me permite 
-          adaptarme a cualquier tipo de equipo.
+          Mi principal proyecto es <strong>Lirium Nutrition</strong>, un backend con 
+          <strong> Java 21</strong> y <strong>Spring Boot</strong> que genera planes alimentarios 
+          semanales a partir del perfil del paciente, garantizando que ningún plan incluya alimentos 
+          excluidos por sus restricciones. Lo construí con arquitectura por capas y principios de 
+          <strong> DDD</strong>, autenticación con <strong>JWT</strong> y <strong>OAuth2</strong>, 
+          más de <strong>840 pruebas</strong> (92% de cobertura) con <strong>PostgreSQL</strong> real 
+          mediante <strong>Testcontainers</strong>, y despliegue continuo. También desarrollé 
+          proyectos con <strong>C#</strong> y <strong>VB.NET</strong>, experiencias que ampliaron mi 
+          perspectiva sobre distintas tecnologías y formas de resolver problemas.
         </Typography>
 
         <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-          Actualmente, me concentro en <strong>certificaciones internacionales</strong> en 
-          <strong> Java</strong> y <strong>Spring (OCA, OCP, Spring Professional)</strong> y planeo un 
-          <strong> posgrado en Inteligencia Artificial</strong>, integrando mi experiencia en backend 
-          con tecnologías de vanguardia.
-        </Typography>
-
-        <Typography variant="body1" paragraph sx={{ textAlign: "justify" }}>
-          Creo que ser un buen desarrollador requiere <strong>constancia</strong>, 
-          <strong> disciplina</strong> y <strong>enfoque</strong>. Programar no es solo traducir 
-          necesidades a código; es agregar valor mediante soluciones efectivas, considerando los 
-          problemas desde distintas perspectivas.
+          Cuento con la certificación <strong>Oracle Certified Associate (OCA)</strong> y con 
+          trayectoria en entornos corporativos como <strong>Renault</strong> y 
+          <strong> Santander Tecnología</strong>, donde conocí dinámicas de trabajo, procesos 
+          estandarizados y colaboración en equipos. Actualmente me preparo para la 
+          <strong> Oracle Certified Professional (OCP)</strong> de Java y para alcanzar el nivel 
+          <strong> B2 de inglés</strong>. Complemento mi formación con la lectura de libros de 
+          ingeniería de software, aplicando sus conceptos directamente en mis proyectos, y estoy 
+          preparando un espacio de tutoriales de ingeniería para compartir y asimilar conocimiento.
         </Typography>
 
         <Typography variant="body1" sx={{ textAlign: "justify" }}>
-          Además, considero que el <strong>desarrollo personal</strong> es clave para el 
-          rendimiento profesional. La <strong>gestión emocional</strong>, la <strong>meditación</strong>, 
-          el <strong>descanso</strong>, la <strong>buena alimentación</strong> y el 
-          <strong> ejercicio físico</strong> fortalecen la claridad, creatividad y constancia en los 
-          proyectos complejos, manteniendo un equilibrio entre productividad y bienestar.
+          Me interesa diseñar soluciones mantenibles, comprender el dominio antes de implementar y 
+          participar en equipos donde la calidad técnica y la mejora continua sean parte del trabajo.
         </Typography>
       </Box>
     </Box>
