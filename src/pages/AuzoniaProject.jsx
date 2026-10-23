@@ -16,22 +16,22 @@ import VideoThumbnail from "../components/VideoThumbnail";
 const videos = [
   { title:"Video de demostración - Gestión de Compras",
     videoUrl : "https://www.youtube.com/embed/ssGL0uKugoQ" ,
-    logoSrc: "/assets/Auzonia/Auzonia_Gestion_Compras.png",
+    logoSrc: "/assets/Auzonia/Auzonia_Gestion_Compras.webp",
     logoAlt: "anavi_portada",
   },
   { title : "Video de demostración - Gestión de Entregas" ,
     videoUrl : "https://www.youtube.com/embed/OQP8eX4zHcA" ,
-    logoSrc: "/assets/Auzonia/Auzonia_Gestion_Entregas.png" ,
+    logoSrc: "/assets/Auzonia/Auzonia_Gestion_Entregas.webp" ,
     logoAlt: "anavi_portada",
   },
   { title : "Video de demostración - Valuación de Inventarios",
     videoUrl : "https://www.youtube.com/embed/Ox8pG_Y2T2U" ,
-    logoSrc: "/assets/Auzonia/Auzonia_Valuacion_Inventarios.png",
+    logoSrc: "/assets/Auzonia/Auzonia_Valuacion_Inventarios.webp",
     logoAlt: "anavi_portada",
   },
   { title:"Video de demostración - Multidioma + Observer" ,
     videoUrl : "https://www.youtube.com/embed/hZbOHes4YaQ" ,
-    logoSrc: "/assets/Auzonia/Auzonia_Multidioma_Patron_Observer.png",
+    logoSrc: "/assets/Auzonia/Auzonia_Multidioma_Patron_Observer.webp",
     logoAlt: "anavi_portada",
   },
 ]
@@ -221,7 +221,7 @@ const AuzoniaProject = () => {
           {/* Imagen de la arquitectura */}
           <Box sx={{ mt: 4, ml: 2, display: "flex", justifyContent: "center" }}>
             <img 
-              src="/assets/Auzonia/Arquitectura_Auzonia.png" 
+              src="/assets/Auzonia/Arquitectura_Auzonia.webp" 
               alt="Arquitectura Auzonia" 
               style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
             />
@@ -283,7 +283,7 @@ const AuzoniaProject = () => {
             {/* Imagen del diagram del proceso */}
             <Box sx={{ mt: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Auzonia/Diagrama_Proceso_Gestion_Compras.png" 
+                src="/assets/Auzonia/Diagrama_Proceso_Gestion_Compras.webp" 
                 alt="Arquitectura Auzonia" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
@@ -352,7 +352,7 @@ const AuzoniaProject = () => {
             {/* Imagen del diagram del proceso */}
             <Box sx={{ mt: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Auzonia/Diagrama_Proceso_Gestion_Entregas.png" 
+                src="/assets/Auzonia/Diagrama_Proceso_Gestion_Entregas.webp" 
                 alt="Arquitectura Auzonia" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
@@ -404,7 +404,7 @@ const AuzoniaProject = () => {
             {/* Imagen del diagram del proceso */}
             <Box sx={{ mt: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Auzonia/Diagrama_Valuacion_Inventario.png" 
+                src="/assets/Auzonia/Diagrama_Valuacion_Inventario.webp" 
                 alt="Arquitectura Auzonia" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
@@ -452,7 +452,7 @@ const AuzoniaProject = () => {
                   <Card sx={{ maxWidth: 500, boxShadow: 3, borderRadius: 1 }}>
                     <CardMedia
                       component="img"
-                      image="/assets/Auzonia/Usuario_no_registrado.png"
+                      image="/assets/Auzonia/Usuario_no_registrado.webp"
                       alt="Usuario no registrado"
                     />
                   </Card>
@@ -461,7 +461,7 @@ const AuzoniaProject = () => {
                   <Card sx={{ maxWidth: 400, boxShadow: 3, borderRadius: 1 }}>
                     <CardMedia
                       component="img"
-                      image="/assets/Auzonia/Contrasena_incorrecta.png"
+                      image="/assets/Auzonia/Contrasena_incorrecta.webp"
                       alt="Contrasena incorrecta" 
                     />
                   </Card>
@@ -490,7 +490,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 500, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Ingreso_valido.png"
+                    image="/assets/Auzonia/Ingreso_valido.webp"
                     alt="Arquitectura Auzonia"
                   />
                 </Card>
@@ -524,7 +524,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 500, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Arbol_Permisos.png"
+                    image="/assets/Auzonia/Arbol_Permisos.webp"
                     alt="Arbol Permisos"
                     sx={{ width: "100%", height: "auto" }}
                   />
@@ -538,7 +538,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Recursividad.png" 
+                    image="/assets/Auzonia/Recursividad.webp" 
                     alt="Recursividad" 
                     sx={{ width: "100%", height: "auto" }}
                   />
@@ -555,7 +555,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Administracion_Perfiles.png" 
+                    image="/assets/Auzonia/Administracion_Perfiles.webp" 
                     alt="Administracion Perfiles" 
                     sx={{ width: "100%", height: "auto" }}
                   />
@@ -644,7 +644,7 @@ const AuzoniaProject = () => {
                   <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                     <CardMedia
                       component="img"
-                      image="/assets/Auzonia/Bitacora_Auditoria.png" 
+                      image="/assets/Auzonia/Bitacora_Auditoria.webp" 
                       alt="Bitacora de Auditoria" 
                       sx={{ width: "100%", height: "auto" }}
                     />
@@ -733,7 +733,7 @@ const AuzoniaProject = () => {
               <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                 <CardMedia
                   component="img"
-                  image="/assets/Auzonia/Multidioma.png" 
+                  image="/assets/Auzonia/Multidioma.webp" 
                   alt="Multidioma" 
                   sx={{ width: "100%", height: "auto" }}
                 />
@@ -767,7 +767,7 @@ const AuzoniaProject = () => {
               <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                 <CardMedia
                   component="img"
-                  image="/assets/Auzonia/Test.png" 
+                  image="/assets/Auzonia/Test.webp" 
                   alt="Multidioma" 
                   sx={{ width: "100%", height: "auto" }}
                 />
@@ -809,7 +809,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Instalador1.png" 
+                    image="/assets/Auzonia/Instalador1.webp" 
                     alt="Instalador2" 
                     sx={{ width: "100%", height: "auto" }}
                   />
@@ -819,7 +819,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Instalador2.png" 
+                    image="/assets/Auzonia/Instalador2.webp" 
                     alt="Instalador2" 
                     sx={{ width: "100%", height: "auto" }}
                   />
@@ -859,7 +859,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Ayuda.png" 
+                    image="/assets/Auzonia/Ayuda.webp" 
                     alt="Ayuda" 
                     sx={{ width: "100%", height: "auto" }}
                   />
@@ -902,7 +902,7 @@ const AuzoniaProject = () => {
                 <Card sx={{ maxWidth: 600, boxShadow: 3, borderRadius: 1 }}>
                   <CardMedia
                     component="img"
-                    image="/assets/Auzonia/Reportes.png" 
+                    image="/assets/Auzonia/Reportes.webp" 
                     alt="Reportes" 
                     sx={{ width: "100%", height: "auto" }}
                   />
@@ -1035,7 +1035,7 @@ const AuzoniaProject = () => {
           {/* Imagen Backup Restore */}
           <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
             <img 
-              src="/assets/Auzonia/Backup_Restore.png" 
+              src="/assets/Auzonia/Backup_Restore.webp" 
               alt="Backup Restore" 
               style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
             />
@@ -1084,7 +1084,7 @@ const AuzoniaProject = () => {
               {/* Mapa de Navegacion */}
               <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
                 <img 
-                  src="/assets/Auzonia/Mapa_Navegacion.png" 
+                  src="/assets/Auzonia/Mapa_Navegacion.webp" 
                   alt="Arbol Permisos" 
                   style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                 />

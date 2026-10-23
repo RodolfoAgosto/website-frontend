@@ -34,7 +34,7 @@ const projects = [
     links: [
       { label: "Código", url: "https://github.com/RodolfoAgosto/anavi-eventos-corporativos", icon: <GitHubIcon /> },
     ],
-    logoSrc: "/assets/anavi_portada.png",
+    logoSrc: "/assets/anavi_portada.webp",
     logoAlt: "anavi_portada",
     coverTitle: "Anavi",
     coverSubtitle: "Eventos Corporativos",   
@@ -51,7 +51,7 @@ const projects = [
     links: [
       { label: "Código", url: "https://github.com/RodolfoAgosto/auzonia-gestion-inventarios", icon: <GitHubIcon /> },
     ],
-    logoSrc: "/assets/auzonia_portada.png",
+    logoSrc: "/assets/auzonia_portada.webp",
     logoAlt: "auzonia_portada",
     coverTitle: "Auzonia",
     coverSubtitle: "Gestión de Inventarios", 

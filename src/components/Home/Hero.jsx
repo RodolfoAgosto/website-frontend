@@ -54,7 +54,7 @@ export default function Hero({ id }) {
       sx={{
         position: "relative",
         height: "100vh",
-        backgroundImage: `url("/assets/Home.jpg")`,
+        backgroundImage: `url("/assets/Home.webp")`,
         backgroundSize: "cover",
         backgroundPosition: { xs: "center right 20%", sm: "center" },
         display: "flex",

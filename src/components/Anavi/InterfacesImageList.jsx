@@ -23,123 +23,123 @@ export default function InterfacesImageList() {
 
 const itemData = [
   {
-    img: '/assets/Anavi/image1.png',
+    img: '/assets/Anavi/image1.webp',
     title: 'Bed',
   },
   {
-    img: '/assets/Anavi/image2.png',
+    img: '/assets/Anavi/image2.webp',
     title: 'Books',
   },
   {
-    img: '/assets/Anavi/image3.png',
+    img: '/assets/Anavi/image3.webp',
     title: 'Sink',
   },
   {
-    img: '/assets/Anavi/image4.png',
+    img: '/assets/Anavi/image4.webp',
     title: 'Kitchen',
   },
   {
-    img: '/assets/Anavi/image5.png',
+    img: '/assets/Anavi/image5.webp',
     title: 'Blinds',
   },
   {
-    img: '/assets/Anavi/image6.png',
+    img: '/assets/Anavi/image6.webp',
     title: 'Chairs',
   },
   {
-    img: '/assets/Anavi/image7.png',
+    img: '/assets/Anavi/image7.webp',
     title: 'Laptop',
   },
   {
-    img: '/assets/Anavi/image8.png',
+    img: '/assets/Anavi/image8.webp',
     title: 'Doors',
   },
   {
-    img: '/assets/Anavi/image9.png',
+    img: '/assets/Anavi/image9.webp',
     title: 'Coffee',
   },
   {
-    img: '/assets/Anavi/image10.png',
+    img: '/assets/Anavi/image10.webp',
     title: 'Storage',
   },
   {
-    img: '/assets/Anavi/image11.png',
+    img: '/assets/Anavi/image11.webp',
     title: 'Candle',
   },
   {
-    img: '/assets/Anavi/image12.png',
+    img: '/assets/Anavi/image12.webp',
     title: 'Coffee table',
   },
     {
-    img: '/assets/Anavi/image13.png',
+    img: '/assets/Anavi/image13.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image14.png',
+    img: '/assets/Anavi/image14.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image15.png',
+    img: '/assets/Anavi/image15.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image16.png',
+    img: '/assets/Anavi/image16.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image17.png',
+    img: '/assets/Anavi/image17.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image18.png',
+    img: '/assets/Anavi/image18.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image19.png',
+    img: '/assets/Anavi/image19.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image20.png',
+    img: '/assets/Anavi/image20.webp',
     title: 'Coffee table',
   },
     {
-    img: '/assets/Anavi/image21.png',
+    img: '/assets/Anavi/image21.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image22.png',
+    img: '/assets/Anavi/image22.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image23.png',
+    img: '/assets/Anavi/image23.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image24.png',
+    img: '/assets/Anavi/image24.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image24.png',
+    img: '/assets/Anavi/image24.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image25.png',
+    img: '/assets/Anavi/image25.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image26.png',
+    img: '/assets/Anavi/image26.webp',
     title: 'Coffee table',
   },
     {
-    img: '/assets/Anavi/image27.png',
+    img: '/assets/Anavi/image27.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image28.png',
+    img: '/assets/Anavi/image28.webp',
     title: 'Coffee table',
   },
   {
-    img: '/assets/Anavi/image29.png',
+    img: '/assets/Anavi/image29.webp',
     title: 'Coffee table',
   },
 

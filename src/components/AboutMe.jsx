@@ -17,7 +17,7 @@ export default function AboutMe() {
       {/* Imagen responsive */}
       <Box
         component="img"
-        src="/assets/Perfil.jpg"
+        src="/assets/Perfil.webp"
         alt="Rodolfo Agosto"
         sx={{
           width: { xs: "100%", sm: 280, md: 320 },
