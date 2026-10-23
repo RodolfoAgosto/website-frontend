@@ -5,19 +5,19 @@ const tutorials = [
   {
     title: "Principios SOLID",
     description: "Buenas prácticas de diseño orientado a objetos para código mantenible y escalable.",
-    logoSrc: "/assets/principios_solid.jpeg",
+    logoSrc: "/assets/principios_solid.webp",
     logoAlt: "anavi_portada",
   },
   {
     title: "Patrón Observer",
     description: "Comunicación eficiente entre objetos mediante suscripción y notificación automática.",
-    logoSrc: "/assets/patron_observe.jpg",
+    logoSrc: "/assets/patron_observe.webp",
     logoAlt: "auzonia_portada",
   },
   {
     title: "Patrón Composite",
     description: "Manejo uniforme de estructuras jerárquicas de objetos mediante composición recursiva.",
-    logoSrc: "/assets/patron_composite.jpg",
+    logoSrc: "/assets/patron_composite.webp",
     logoAlt: "auzonia_portada",
   }
 ];

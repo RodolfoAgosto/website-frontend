@@ -48,7 +48,7 @@ export const liriumSections = [
         id: "demo-api",
         title: "Demo y API en vivo",
         images: [
-          { src: "/assets/lirium/lirium_swagger.png", alt: "Swagger UI de la API de Lirium con sus grupos de endpoints", caption: "Documentación interactiva de la API (Swagger UI)." },
+          { src: "/assets/lirium/lirium_swagger.webp", alt: "Swagger UI de la API de Lirium con sus grupos de endpoints", caption: "Documentación interactiva de la API (Swagger UI)." },
         ],
         paragraphs: [
           "La API está publicada con su documentación interactiva (Swagger UI) y tiene más de 50 endpoints. Para probarla se inicia sesión con **POST /api/auth/login**, se pega el token en **Authorize** y se sigue el flujo: generar un plan, activarlo, registrar un día y consultar la adherencia. Los usuarios de prueba están en el README del repositorio.",
@@ -197,7 +197,7 @@ export const liriumSections = [
         id: "comparacion-nutricional",
         title: "Comparación nutricional",
         images: [
-          { src: "/assets/lirium/lirium_reporte.png", alt: "Respuesta del reporte de comparación nutricional", caption: "Respuesta del reporte de comparación nutricional." },
+          { src: "/assets/lirium/lirium_reporte.webp", alt: "Respuesta del reporte de comparación nutricional", caption: "Respuesta del reporte de comparación nutricional." },
         ],
         paragraphs: [
           "Compara, día por día, lo que el paciente registró con lo que el plan prescribía para ese día en calorías, proteínas, carbohidratos y grasas. Cada nutriente recibe un puntaje de cercanía de 0 a 100, que baja igual por comer de menos que de más, y hay un puntaje global ponderado (calorías 40 %, cada macronutriente 20 %; son ponderaciones ilustrativas, no clínicas).",
@@ -222,7 +222,7 @@ export const liriumSections = [
         id: "estrategia-pruebas",
         title: "Estrategia de pruebas",
         images: [
-          { src: "/assets/lirium/lirium_cobertura.png", alt: "Reporte de cobertura de JaCoCo", caption: "Reporte de cobertura unificado (JaCoCo)." },
+          { src: "/assets/lirium/lirium_cobertura.webp", alt: "Reporte de cobertura de JaCoCo", caption: "Reporte de cobertura unificado (JaCoCo)." },
         ],
         paragraphs: [
           "El proyecto tiene **más de 840 pruebas**: unitarias, de repositorios con `@DataJpaTest`, de integración con el contexto completo de Spring y de arquitectura con ArchUnit. La cobertura unificada (unitarias más integración) es de **92 % de instrucciones y 82 % de ramas**.",
@@ -240,7 +240,7 @@ export const liriumSections = [
         id: "analisis-estatico",
         title: "Análisis estático y estilo",
         images: [
-          { src: "/assets/lirium/lirium_sonar.png", alt: "Panel de SonarCloud con el Quality Gate aprobado", caption: "Panel de SonarCloud." },
+          { src: "/assets/lirium/lirium_sonar.webp", alt: "Panel de SonarCloud con el Quality Gate aprobado", caption: "Panel de SonarCloud." },
         ],
         paragraphs: [
           "**SonarCloud** tiene el Quality Gate aprobado, con calificación **A** en seguridad, confiabilidad y mantenibilidad, y 0,5 % de duplicación. El estilo de código es uniforme gracias a **Spotless** con google-java-format, que se verifica en la integración continua.",
@@ -296,7 +296,7 @@ export const liriumSections = [
         ],
         images: [
           { src: "/assets/lirium/lirium_cicd.svg", alt: "Diagrama del pipeline de integración y despliegue continuo", caption: "Del push al despliegue." },
-          { src: "/assets/lirium/lirium_pipeline.png", alt: "Una corrida del pipeline en GitHub Actions", caption: "Una corrida real del pipeline en GitHub Actions." },
+          { src: "/assets/lirium/lirium_pipeline.webp", alt: "Una corrida del pipeline en GitHub Actions", caption: "Una corrida real del pipeline en GitHub Actions." },
         ],
       },
       {

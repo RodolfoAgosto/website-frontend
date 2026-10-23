@@ -14,22 +14,22 @@ import VideoThumbnail from "../components/VideoThumbnail";
 const videos = [
   { title:"Video de demostración - Gestión de Eventos",
     videoUrl : "https://www.youtube.com/embed/BDYn7ldwxpM" ,
-    logoSrc: "/assets/Auzonia/Anavi_Portada_Gestion_Eventos.png",
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Gestion_Eventos.webp",
     logoAlt: "anavi_portada",
   },
   { title : "Video de demostración - Cálculo Dinámico del Presupuesto y Recomendaciones Inteligentes" ,
     videoUrl : "https://www.youtube.com/embed/zCutKMYx32g" ,
-    logoSrc: "/assets/Auzonia/Anavi_Portada_Presupuesto_Recomendaciones.png" ,
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Presupuesto_Recomendaciones.webp" ,
     logoAlt: "anavi_portada",
   },
   { title : "Video de demostración - Sistema de Calificaciones y Reputación",
     videoUrl : "https://www.youtube.com/embed/StipNK77aQE" ,
-    logoSrc: "/assets/Auzonia/Anavi_Portada_Calificaciones_Reputacion.png",
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Calificaciones_Reputacion.webp",
     logoAlt: "anavi_portada",
   },
   { title:"Video de demostración - Permisos y Perfiles + Patrón Composite" ,
     videoUrl : "https://www.youtube.com/embed/JOx6IyrJBGE" ,
-    logoSrc: "/assets/Auzonia/Anavi_Portada_Permisos_Composite.png",
+    logoSrc: "/assets/Auzonia/Anavi_Portada_Permisos_Composite.webp",
     logoAlt: "anavi_portada",
   },
 ]
@@ -207,7 +207,7 @@ const AnaviProject = () => {
           {/* Imagen de la arquitectura */}
           <Box sx={{ mt: 4, ml: 2, display: "flex", justifyContent: "center" }}>
             <img 
-              src="/assets/Anavi/Arquitectura_Anavi.png" 
+              src="/assets/Anavi/Arquitectura_Anavi.webp" 
               alt="Arquitectura Anavi" 
               style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
             />
@@ -274,7 +274,7 @@ const AnaviProject = () => {
             </Box>
             <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Anavi/Image22.png" 
+                src="/assets/Anavi/image22.webp" 
                 alt="Crear Cuenta" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
@@ -351,7 +351,7 @@ const AnaviProject = () => {
             </Box>
             <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Anavi/Image23.png" 
+                src="/assets/Anavi/image23.webp" 
                 alt="Crear Cuenta" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
@@ -401,7 +401,7 @@ const AnaviProject = () => {
       </Box>
                   <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Anavi/Image24.png" 
+                src="/assets/Anavi/image24.webp" 
                 alt="Crear Cuenta" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
@@ -468,14 +468,14 @@ const AnaviProject = () => {
               {/* Imagen usuario logueado */}
               <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Anavi/Ingreso.png" 
+                src="/assets/Anavi/Ingreso.webp" 
                 alt="Crear Cuenta" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                 />
               </Box>
               <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Anavi/CrearCuenta.png" 
+                src="/assets/Anavi/CrearCuenta.webp" 
                 alt="Crear Cuenta" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                 />
@@ -557,7 +557,7 @@ const AnaviProject = () => {
                 </Typography>
                 <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
                   <img 
-                    src="/assets/Anavi/Bitacora.png" 
+                    src="/assets/Anavi/Bitacora.webp" 
                     alt="Crear Cuenta" 
                     style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                   />
@@ -627,7 +627,7 @@ const AnaviProject = () => {
               {/* Administracion Perfiles */}
               <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
                 <img 
-                  src="/assets/Anavi/Perfiles.png" 
+                  src="/assets/Anavi/Perfiles.webp" 
                   alt="Administracion Perfiles" 
                   style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                 />
@@ -673,7 +673,7 @@ const AnaviProject = () => {
             {/* Imagen Arbol de Permisos */}
             <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Anavi/Reportes.png" 
+                src="/assets/Anavi/Reportes.webp" 
                 alt="Reportes" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />
@@ -781,7 +781,7 @@ const AnaviProject = () => {
                               {/* Imagen Arbol de Permisos */}
                   <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
                     <img 
-                      src="/assets/Anavi/Backup-Restore.png" 
+                      src="/assets/Anavi/Backup-Restore.webp" 
                       alt="Arbol Permisos" 
                       style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
                     />
@@ -874,7 +874,7 @@ const AnaviProject = () => {
             {/* Imagen Arbol de Permisos */}
             <Box sx={{ mt: 4, mb: 4, ml: 2, display: "flex", justifyContent: "center" }}>
               <img 
-                src="/assets/Anavi/Multidioma.png" 
+                src="/assets/Anavi/Multidioma.webp" 
                 alt="Arbol Permisos" 
                 style={{ maxWidth: "100%", height: "auto", borderRadius: 1, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
               />

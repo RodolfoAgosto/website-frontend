@@ -6,17 +6,17 @@ const blogs = [
   {
     title: "Mi experiencia en certificación oficial OCA de Oracle",
     subtitle: "OCA es una de las primeras certificaciones Java. En este blog te cuento cómo me preparé, los pros y los contras.",
-    imageSrc: "/assets/portada_blog_oca.jpg",     
+    imageSrc: "/assets/portada_blog_oca.webp",     
   },
   {
     title: "Reseña Clean Architecture",
     subtitle: "Un repaso del clásico de Robert C. Martin donde explico los conceptos principales y cómo aplicarlos en proyectos reales.",
-    imageSrc: "/assets/portada_blog_clean_architecture.jpg",
+    imageSrc: "/assets/portada_blog_clean_architecture.webp",
   },
   {
     title: "Reseña Clean Code",
     subtitle: "Analizo las lecciones más importantes del libro que marcó un antes y un después en la forma de escribir código legible y mantenible.",
-    imageSrc: "/assets/portada_blog_clean_code.jpeg",
+    imageSrc: "/assets/portada_blog_clean_code.webp",
   },
 ];
 
