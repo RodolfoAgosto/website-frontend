@@ -59,6 +59,14 @@ npm start
 
 The app runs at <http://localhost:3000>.
 
+### Tests
+
+```bash
+npm test
+```
+
+The smoke tests render the home page and the Lirium project page. SVG imports and `react-router` are mapped in the `jest` section of `package.json`, because Create React App's Jest setup cannot load them as-is with React 19 and React Router 7.
+
 ### Production build
 
 ```bash
@@ -73,7 +81,7 @@ The site is deployed on Vercel. Since the app uses `BrowserRouter`, `vercel.json
 
 ## Known limitations
 
-- The default Create React App test is still in place and does not reflect the real UI. Real tests are planned.
+- Test coverage is minimal: two smoke tests that check the home page and the Lirium page render. More tests are planned.
 - Some images are not yet optimized for the web.
 - Migration from Create React App to Vite is planned.
 
