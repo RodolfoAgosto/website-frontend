@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography, Button, Card, Grid, IconButton } from "@mui/material";
+import { Box, Typography, Button, Card, Grid, IconButton, Chip } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { Link } from 'react-router-dom';
 
@@ -10,6 +10,8 @@ export default function ProjectCard({
   logoSrc,
   logoAlt = "Logo",
   path,
+  featured = false,
+  links = [],
 }) {
   const [playing, setPlaying] = useState(false);
 
@@ -23,7 +25,7 @@ export default function ProjectCard({
         boxShadow: 1,
         borderRadius: 1,
         backgroundColor: "#E8D7C5",
-        border: "1px solid #DABFAE",
+        border: featured ? "2px solid #DAA34A" : "1px solid #DABFAE",
         minHeight: 270,
       }}
     >
@@ -31,6 +33,13 @@ export default function ProjectCard({
         {/* Texto a la izquierda */}
         <Grid size={{ xs: 12, md: 6 }}>
           <div>
+                        {featured && (
+              <Chip
+                label="Proyecto destacado"
+                size="small"
+                sx={{ mb: 1, bgcolor: "#DAA34A", color: "#4F2928", fontWeight: 600 }}
+              />
+            )}
             <Typography variant="h5" gutterBottom>
               {title}
             </Typography>
@@ -45,24 +54,37 @@ export default function ProjectCard({
               ))}
             </Typography>
           </div>
-          <Box sx={{ mt: 2, display: "flex",
-            justifyContent: {
-              xs: "flex-end",
-              md: "flex-start"
-            }
+          <Box sx={{ mt: 2, display: "flex", flexWrap: "wrap", gap: 1,
+            justifyContent: { xs: "flex-end", md: "flex-start" }
           }}>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#4F2928",
-                color: "#F0E6E2",
-                "&:hover": { backgroundColor: "#3b1f22" },
-              }}
-              component={Link} 
-              to={path} 
-            >
-              Explorar proyecto
-            </Button>
+            {links.map((l) => (
+              <Button
+                key={l.label}
+                size="small"
+                variant="outlined"
+                href={l.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                startIcon={l.icon}
+                sx={{ textTransform: "none" }}
+              >
+                {l.label}
+              </Button>
+            ))}
+            {path && (
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#4F2928",
+                  color: "#F0E6E2",
+                  "&:hover": { backgroundColor: "#3b1f22" },
+                }}
+                component={Link}
+                to={path}
+              >
+                Explorar proyecto
+              </Button>
+            )}
           </Box>
         </Grid>
 

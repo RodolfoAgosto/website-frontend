@@ -41,7 +41,7 @@ export default function Home() {
         <Skills/>
       </Seccion>
 
-      <Seccion id="educacion" titulo="Educación  y Certificaciones" bgcolor={theme.palette.background.secondary}>
+      <Seccion id="educacion" titulo="Educación y Certificaciones" bgcolor={theme.palette.background.secondary}>
         <EducationCertifications/>
       </Seccion>
 
