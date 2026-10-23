@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Rodolfo Agosto — Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio of Rodolfo Agosto, a Java backend developer focused on Spring Boot and REST API design. The site presents my projects, training and certifications, and is the entry point to my main project, **Lirium Nutrition Planning**.
 
-## Available Scripts
+The site is in Spanish, since it is aimed at the job market where I live (Argentina).
 
-In the project directory, you can run:
+## What is on the site
 
-### `npm start`
+- **Home:** about me, education and certifications (Oracle Certified Associate, Java SE), skills, projects, tutorials, blog and contact.
+- **Lirium Nutrition Planning (featured):** a detail page with an index, embedded videos, architecture diagrams and screenshots. It covers the domain model, the plan generation engine, reports, security, testing strategy and the CI/CD pipeline.
+- **Earlier projects:** Anavi and Auzonia, each with its own detail page, diagrams and interface screenshots.
+- **Contact:** a form that sends messages through [Formspree](https://formspree.io), so no email address is exposed in the page.
+- **Tutorials and blog:** cards marked as "under construction" until the content is published.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Featured project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**[Lirium Nutrition Planning](https://github.com/RodolfoAgosto/lirium-nutrition-planning)** is a Spring Boot REST API (Java 21) that generates weekly meal plans that respect each patient's dietary restrictions, and measures how well the patient follows them. It uses PostgreSQL with Flyway, Redis, JWT and Google OAuth2, and has an automated test suite, static analysis and a CI/CD pipeline.
 
-### `npm test`
+## Tech stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Area | Technology |
+| --- | --- |
+| UI | React 19, Material UI 7 |
+| Routing | React Router 7 (client-side routing) |
+| Build | Create React App (`react-scripts` 5) |
+| Animation and media | Framer Motion, React Slick, YouTube embeds |
+| Icons | MUI Icons, React Icons |
+| Code quality | ESLint, Prettier |
+| Hosting | Vercel |
 
-### `npm run build`
+## Project structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── components/   # Reusable UI and per-project components (Anavi, Auzonia, Projects, ...)
+├── context/      # Navigation state shared across the layout
+├── data/         # Content data (Lirium page sections and links)
+├── hooks/        # Custom hooks (active section tracking)
+├── layouts/      # Sidebar layout
+├── pages/        # Home and project detail pages
+└── styles/       # MUI theme
+public/
+├── assets/       # Images and diagrams
+└── docs/         # Project documentation (PDF and Enterprise Architect files)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Requirements: Node.js 18 or later and npm.
 
-### `npm run eject`
+```bash
+git clone https://github.com/RodolfoAgosto/website-frontend.git
+cd website-frontend
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app runs at <http://localhost:3000>.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Production build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The optimized output is generated in the `build/` folder.
 
-## Learn More
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The site is deployed on Vercel. Since the app uses `BrowserRouter`, `vercel.json` rewrites every request to `index.html`. Without that rule, reloading a nested route such as `/pages/lirium_project` would return a 404.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Known limitations
 
-### Code Splitting
+- The default Create React App test is still in place and does not reflect the real UI. Real tests are planned.
+- Some images are not yet optimized for the web.
+- Migration from Create React App to Vite is planned.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contact
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [RodolfoAgosto](https://github.com/RodolfoAgosto)
+- LinkedIn: [rodolfo-agosto](https://www.linkedin.com/in/rodolfo-agosto/)
+- YouTube: [@RodolfoJavierAgosto](https://www.youtube.com/@RodolfoJavierAgosto)
+- Contact form: available in the Contact section of the site.
