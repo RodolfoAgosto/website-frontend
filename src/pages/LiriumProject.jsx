@@ -114,11 +114,9 @@ function Figure({ image }) {
           onError={() => setMissing(true)}
           sx={{
             maxWidth: "100%",
-            maxHeight: 420,
-            border: "1px solid #DABFAE",
+            height: "auto",
             borderRadius: 1,
-            bgcolor: "background.secondary",
-            p: 1,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
           }}
         />
       </a>
