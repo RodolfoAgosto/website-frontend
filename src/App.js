@@ -4,14 +4,12 @@ import Home from './pages/Home';
 import AnaviProject from './pages/AnaviProject';
 import AuzoniaProject from './pages/AuzoniaProject';
 import ScrollToTop from './components/ScrollToTop';
-import { NavProvider } from "./context/NavContext";
 import LiriumProject from './pages/LiriumProject';
 
 function App() {
   return (
     <>
       <Router>
-         <NavProvider>
         <ScrollToTop />       
         <SidebarLayout>
           <Routes>
@@ -21,7 +19,6 @@ function App() {
             <Route path="/pages/auzonia_project" element={<AuzoniaProject />} />    
           </Routes>
         </SidebarLayout>
-        </NavProvider>
       </Router>
     </>
   );
