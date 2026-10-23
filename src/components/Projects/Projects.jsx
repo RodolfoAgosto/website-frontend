@@ -6,6 +6,9 @@ import BuildIcon from '@mui/icons-material/Build';
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
+import { liriumLinks } from "../../data/liriumSections";
+
+const cardIcons = { github: <GitHubIcon />, link: <OpenInNewIcon />, playlist: <PlaylistPlayIcon /> };
 
 const lirium = {
   title: "Lirium Nutrition Planning",
@@ -18,19 +21,15 @@ const lirium = {
   videoUrl: "https://www.youtube.com/embed/6zi3zPiI3eM",
   logoSrc: "https://img.youtube.com/vi/6zi3zPiI3eM/maxresdefault.jpg",
   logoAlt: "Presentación de Lirium Nutrition Planning",
-  links: [
-    { label: "Código", url: "https://github.com/RodolfoAgosto/lirium-nutrition-planning", icon: <GitHubIcon /> },
-    { label: "API en vivo", url: "https://lirium-nutrition-planning-api.onrender.com", icon: <OpenInNewIcon /> },
-    { label: "Demo", url: "https://lirium-nutrition-frontend-theta.vercel.app/", icon: <OpenInNewIcon /> },
-    { label: "Serie de videos", url: "https://www.youtube.com/playlist?list=PLZ2OWG7ilJl0", icon: <PlaylistPlayIcon /> },
-  ],
+  path: "/pages/lirium_project",
+  links: liriumLinks.filter((l) => l.card !== false).map((l) => ({ ...l, icon: cardIcons[l.icon] })),
 };
 
 const projects = [
   {
     title: "Organización Inteligente de Eventos",
     description: "Marketplace de eventos con filtros avanzados, APIs externas, estimaciones inteligentes y sistema de puntuaciones. Incorpora seguridad robusta, auditoría, soporte multiidioma y documentación completa para despliegue profesional.",
-    videoUrl: "https://www.youtube.com/embed/0AEZwfz_MMk",
+    videoUrl:  "https://www.youtube.com/embed/0AEZwfz_MMk",
     path: "/pages/anavi_project",
     links: [
       { label: "Código", url: "https://github.com/RodolfoAgosto/anavi-eventos-corporativos", icon: <GitHubIcon /> },
@@ -38,7 +37,7 @@ const projects = [
     logoSrc: "/assets/anavi_portada.png",
     logoAlt: "anavi_portada",
     coverTitle: "Anavi",
-    coverSubtitle: "Eventos Corporativos",
+    coverSubtitle: "Eventos Corporativos",   
   },
   {
     title: "Plataforma Integral de Gestión de Inventarios",
@@ -55,12 +54,12 @@ const projects = [
     logoSrc: "/assets/auzonia_portada.png",
     logoAlt: "auzonia_portada",
     coverTitle: "Auzonia",
-    coverSubtitle: "Gestión de Inventarios",
+    coverSubtitle: "Gestión de Inventarios", 
   }
 ];
 
 
-export default function Projects() {
+export default function Projects() {  
   return (
     <Box component="section" sx={{ maxWidth: "1000px", margin: "0 auto", py: 6, px: { xs: 2, sm: 6 } }}>
       {/* Proyecto destacado */}

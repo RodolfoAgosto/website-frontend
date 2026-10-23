@@ -5,6 +5,7 @@ import AnaviProject from './pages/AnaviProject';
 import AuzoniaProject from './pages/AuzoniaProject';
 import ScrollToTop from './components/ScrollToTop';
 import { NavProvider } from "./context/NavContext";
+import LiriumProject from './pages/LiriumProject';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <SidebarLayout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/pages/lirium_project" element={<LiriumProject />} />
             <Route path="/pages/anavi_project" element={<AnaviProject />} />
             <Route path="/pages/auzonia_project" element={<AuzoniaProject />} />    
           </Routes>
