@@ -1,6 +1,6 @@
 # Rodolfo Agosto — Personal Portfolio Website
 
-**Live site:** https://website-frontend-three-pearl.vercel.app
+**Live site:** https://rodolfoagosto.com
 
 Personal portfolio of Rodolfo Agosto, a Java backend developer focused on Spring Boot and REST API design. The site presents my projects, training and certifications, and is the entry point to my main project, **Lirium Nutrition Planning**.
 
