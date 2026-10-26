@@ -20,7 +20,7 @@ import {
   SiSharp,
   SiApachemaven,
 } from "react-icons/si";
-import { FaCubes, FaLayerGroup, FaSitemap, FaPlug, FaDatabase, FaFlask, FaWandMagicSparkles, FaRightLeft } from "react-icons/fa6";
+import { FaCubes, FaLayerGroup, FaSitemap, FaPlug, FaDatabase, FaFlask } from "react-icons/fa6";
 import { ReactComponent as JavaIcon } from '../assets/icons/java.svg';
 import { ReactComponent as Javascript } from '../assets/icons/javascript.svg';
 import { ReactComponent as JUnitIcon } from '../assets/icons/junit5.svg';
@@ -30,6 +30,8 @@ import { ReactComponent as SQLServerIcon } from '../assets/icons/microsoftsqlser
 import { ReactComponent as Swagger } from '../assets/icons/swagger.svg';
 import { ReactComponent as Scrumkanban } from '../assets/icons/scrumkanban.svg';
 import { ReactComponent as CleanCode } from '../assets/icons/cleancode.svg';
+import lombokLogo from '../assets/icons/lombok.png';
+import mapstructLogo from '../assets/icons/mapstruct.png';
 import { ReactComponent as Uml } from '../assets/icons/uml.svg';
 import { ReactComponent as PatronesDeDiseño } from '../assets/icons/patrones.svg';
 
@@ -41,8 +43,8 @@ const skillIcons = {
   "APIs REST": <FaPlug size={26} color="#4F2928" />,
   SQL: <FaDatabase size={26} color="#4F2928" />,
   Testcontainers: <FaFlask size={26} color="#4F2928" />,
-  Lombok: <FaWandMagicSparkles size={26} color="#4F2928" />,
-  MapStruct: <FaRightLeft size={26} color="#4F2928" />,
+  Lombok: <img src={lombokLogo} alt="Lombok" style={{ width: 32, height: 32, objectFit: "contain" }} />,
+  MapStruct: <img src={mapstructLogo} alt="MapStruct" style={{ width: 32, height: 32, objectFit: "contain" }} />,
   Maven: <SiApachemaven size={32} color="#c71a36" />,
   "Java 21": <JavaIcon style={{ width: 32, height: 32, fill: "#f89820" }} />,
   "Patrones de diseño": <PatronesDeDiseño style={{ width: 180, height: 180, fill: "#f89820" }} />,
