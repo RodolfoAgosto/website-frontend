@@ -84,7 +84,7 @@ export default function Sidebar({ setOpen }) {
       <Stack direction="column" alignItems="center" spacing={2} sx={{ mt: 4, mb: 2 }}>
         <Avatar
           alt="Rodolfo Agosto"
-          src="/assets/Perfil.webp"
+          src="/assets/PerfilFormal.webp"
           sx={{
             width: 100,
             height: 100,
