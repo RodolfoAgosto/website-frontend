@@ -8,6 +8,7 @@ import AboutMe from '../components/AboutMe';
 import Skills from '../components/Skills';
 import EducationCertifications from '../components/EducationData';
 import Projects from '../components/Projects/Projects';
+import Recommendations from '../components/Recommendations/Recommendations';
 import Tutorials from '../components/Tutorials/Tutorials';
 import Blogs from '../components/Blogs/Blogs';
 import CV from '../components/CV';
@@ -49,19 +50,23 @@ export default function Home() {
         <Projects/>
       </Seccion>
 
-      <Seccion id="tutoriales" titulo="Tutoriales" bgcolor={theme.palette.background.secondary}>
+      <Seccion id="recomendaciones" titulo="Recomendaciones" bgcolor={theme.palette.background.secondary}>
+        <Recommendations/>
+      </Seccion>
+
+      <Seccion id="tutoriales" titulo="Tutoriales" bgcolor={theme.palette.background.default}>
         <Tutorials/>
       </Seccion>
 
-      <Seccion id="blog" titulo="Blogs" bgcolor={theme.palette.background.default}>
+      <Seccion id="blog" titulo="Blogs" bgcolor={theme.palette.background.secondary}>
         <Blogs/>
       </Seccion>
 
-      <Seccion id="cv" titulo="CV" bgcolor={theme.palette.background.secondary}>
+      <Seccion id="cv" titulo="CV" bgcolor={theme.palette.background.default}>
         <CV/>
       </Seccion>
 
-      <Seccion id="contacto" titulo="Contacto" bgcolor={theme.palette.background.default}>
+      <Seccion id="contacto" titulo="Contacto" bgcolor={theme.palette.background.secondary}>
         <Contacto />
       </Seccion>
 

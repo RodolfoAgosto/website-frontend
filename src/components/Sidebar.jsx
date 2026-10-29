@@ -20,6 +20,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import BuildIcon from "@mui/icons-material/Build";
 import SchoolIcon from "@mui/icons-material/School";
 import FolderIcon from "@mui/icons-material/Folder";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import ArticleIcon from "@mui/icons-material/Article";
 import DescriptionIcon from "@mui/icons-material/Description";
@@ -32,6 +33,7 @@ const menuItems = [
   { text: "Competencias", id: "competencias", icon: <BuildIcon /> },
   { text: "Educación y Certificaciones", id: "educacion", icon: <SchoolIcon /> },
   { text: "Proyectos", id: "proyectos", icon: <FolderIcon /> },
+  { text: "Recomendaciones", id: "recomendaciones", icon: <FormatQuoteIcon /> },
   { text: "Tutoriales", id: "tutoriales", icon: <MenuBookIcon /> },
   { text: "Blog", id: "blog", icon: <ArticleIcon /> },
   { text: "CV", id: "cv", icon: <DescriptionIcon /> },
@@ -81,18 +83,34 @@ export default function Sidebar({ setOpen }) {
 
   const drawerContent = (
     <Box sx={{ textAlign: "center", color: theme.palette.sidebar.inactive }}>
-      <Stack direction="column" alignItems="center" spacing={2} sx={{ mt: 4, mb: 2 }}>
+      <Stack direction="column" alignItems="center" spacing={1.5} sx={{ mt: 3, mb: 1 }}>
         <Avatar
           alt="Rodolfo Agosto"
           src="/assets/PerfilFormal.webp"
           sx={{
             width: 100,
             height: 100,
-            border: `3px solid ${theme.palette.sidebar.inactive}`,
+            border: `3px solid ${theme.palette.sidebar.active}`,
             borderRadius: "50%",
           }}
         />
         <Typography variant="h5">Rodolfo Agosto</Typography>
+        <Box
+          sx={{
+            width: 40,
+            height: 3,
+            borderRadius: 2,
+            bgcolor: theme.palette.sidebar.active,
+          }}
+        />
+        <Box sx={{ px: 2 }}>
+          <Typography variant="subtitle1" sx={{ lineHeight: 1.3 }}>
+            Ingeniero de Software
+          </Typography>
+          <Typography variant="caption" sx={{ display: "block", mt: 0.5, color: "inherit", opacity: 0.75 }}>
+            Backend · Java · Spring Boot · APIs REST
+          </Typography>
+        </Box>
         <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
           <IconButton
             component="a"
@@ -131,6 +149,7 @@ export default function Sidebar({ setOpen }) {
             onClick={() => scrollToSection(item.id)}
             selected={activeId === item.id} // 👈 marca el activo
             sx={{
+              py: 0.75,
               "&.Mui-selected": {
                 backgroundColor: theme.palette.sidebar.background,
                 color: theme.palette.sidebar.active,
