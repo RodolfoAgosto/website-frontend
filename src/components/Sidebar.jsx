@@ -105,7 +105,7 @@ export default function Sidebar({ setOpen }) {
         />
         <Box sx={{ px: 2 }}>
           <Typography variant="subtitle1" sx={{ lineHeight: 1.3 }}>
-            Ingeniero de Software
+            Ingeniero en Sistemas
           </Typography>
           <Typography variant="caption" sx={{ display: "block", mt: 0.5, color: "inherit", opacity: 0.75 }}>
             Backend · Java · Spring Boot · APIs REST
