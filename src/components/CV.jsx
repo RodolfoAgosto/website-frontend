@@ -1,5 +1,8 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import DescriptionIcon from "@mui/icons-material/Description";
+import DownloadIcon from "@mui/icons-material/Download";
+
+export const CV_PATH = "/docs/CV-Rodolfo-Agosto.pdf";
 
 export default function CV() {
   const goToContact = () => {
@@ -22,18 +25,30 @@ export default function CV() {
       </Typography>
 
       <Typography variant="body1" sx={{ mb: 3 }}>
-        Mi CV se adapta a cada oportunidad: destaco la experiencia y las tecnologías más
-        relevantes para el puesto. Si querés recibirlo, escribime y te lo envío.
+        Podés descargar mi CV base en PDF. Si necesitás una versión adaptada a un puesto o a
+        una tecnología en particular, escribime y te la envío.
       </Typography>
 
-      <Button
-        variant="contained"
-        size="large"
-        startIcon={<DescriptionIcon />}
-        onClick={goToContact}
-      >
-        Pedime mi CV
-      </Button>
+      <Stack direction={{ xs: "column", sm: "row" }} spacing={2} justifyContent="center">
+        <Button
+          variant="contained"
+          size="large"
+          startIcon={<DownloadIcon />}
+          component="a"
+          href={CV_PATH}
+          download="CV-Rodolfo-Agosto.pdf"
+        >
+          Descargar CV (PDF)
+        </Button>
+        <Button
+          variant="outlined"
+          size="large"
+          startIcon={<DescriptionIcon />}
+          onClick={goToContact}
+        >
+          Pedime una versión adaptada
+        </Button>
+      </Stack>
     </Box>
   );
 }
