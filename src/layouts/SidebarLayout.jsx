@@ -33,7 +33,7 @@ export default function SidebarLayout({ children }) {
         </Box>
       )}
       {/* Main content */}
-      <Box component="main" sx={{ flexGrow: 1, bgcolor: theme.palette.background.default, transition: "0.3s", }} >
+      <Box component="main" sx={{ flexGrow: 1, minWidth: 0, bgcolor: theme.palette.background.default, transition: "0.3s", }} >
         {children}
         <Footer/>      
       </Box>
