@@ -94,7 +94,7 @@ const AuzoniaProject = () => {
   return (
     <Box sx={{ display: "flex", gap: 4, p: 5 }}>
       {/* Contenido principal */}
-      <Box sx={{ flex: 1, maxWidth: "800px" }}>
+      <Box sx={{ flex: 1, minWidth: 0, maxWidth: "800px" }}>
         <Typography variant="h4" gutterBottom>Auzonia - Gestión de Inventario</Typography>        
         <Box
           sx={{
