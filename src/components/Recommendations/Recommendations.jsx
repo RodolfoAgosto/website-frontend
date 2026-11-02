@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Chip,
@@ -17,11 +17,17 @@ import recommendations, {
 } from "../../data/recommendations";
 
 const SWIPE_THRESHOLD = 50;
+// Time each page stays on screen before the carousel moves on by itself.
+const AUTOPLAY_MS = 7000;
+// Height reserved for the cards so the section does not jump between pages
+// whose recommendations have different text lengths (max text is ~450 chars).
+const CARDS_MIN_HEIGHT = { xs: 430, sm: 400, md: 470 };
 
 export default function Recommendations() {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
   const isSm = useMediaQuery(theme.breakpoints.up("sm"));
+  const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   // 3 cards on desktop, 2 on tablet, 1 on phone.
   const perPage = isMd ? 3 : isSm ? 2 : 1;
 
@@ -33,10 +39,20 @@ export default function Recommendations() {
   const pages = Math.ceil(items.length / perPage);
   const [page, setPage] = useState(0);
   const [touchStartX, setTouchStartX] = useState(null);
+  const [paused, setPaused] = useState(false);
   const current = Math.min(page, pages - 1);
   const visible = items.slice(current * perPage, current * perPage + perPage);
 
   const goTo = (next) => setPage(Math.max(0, Math.min(pages - 1, next)));
+
+  // Advance automatically, looping back to the first page. It stops while the
+  // visitor hovers or focuses the carousel, and never runs for people who
+  // asked their system to reduce motion. Changing page restarts the timer.
+  useEffect(() => {
+    if (pages <= 1 || paused || reducedMotion) return undefined;
+    const timer = setTimeout(() => setPage((current + 1) % pages), AUTOPLAY_MS);
+    return () => clearTimeout(timer);
+  }, [current, pages, paused, reducedMotion]);
 
   const handleTouchEnd = (event) => {
     if (touchStartX === null) return;
@@ -57,8 +73,18 @@ export default function Recommendations() {
         role="region"
         aria-roledescription="carrusel"
         aria-label="Recomendaciones"
-        onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
-        onTouchEnd={handleTouchEnd}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={() => setPaused(false)}
+        onTouchStart={(e) => {
+          setPaused(true);
+          setTouchStartX(e.touches[0].clientX);
+        }}
+        onTouchEnd={(e) => {
+          handleTouchEnd(e);
+          setPaused(false);
+        }}
         sx={{ mt: 2 }}
       >
         <Box
@@ -67,6 +93,7 @@ export default function Recommendations() {
             gridTemplateColumns: `repeat(${perPage}, minmax(0, 1fr))`,
             gap: 2,
             alignItems: "stretch",
+            minHeight: CARDS_MIN_HEIGHT,
           }}
         >
           {visible.map((item) => (
